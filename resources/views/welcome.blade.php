@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     </head>
     <body>
@@ -24,13 +25,13 @@
                 @endif
         </header>
         <main>
-
+            <P class="text"></P>
         </main>
         <footer>
             <div class="underbar">
-                <p class="home">ホーム</p>
-                <p class="search">検索</p>
-                <p class="account">アカウント</p>
+                <p class="home"><i class="fas fa-home fa-2x" ></i></p>
+                <p class="search"><i class="fas fa-search fa-2x"></i></p>
+                <p class="account"><i class="fas fa-user fa-2x"></i></p>
             </div>
         </footer>
     </body>
