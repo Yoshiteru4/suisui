@@ -16,9 +16,9 @@
                         @auth
                             <a href="{{ url('/home') }}">Home</a>
                         @else
-                            <a href="{{ route('login') }}">ログイン</a>
+                            <a class="log" href="{{ route('login') }}">ログイン</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}">新規登録</a>
+                                <a class="sign" href="{{ route('register') }}">新規登録</a>
                             @endif
                         @endauth
                     </div>
@@ -29,9 +29,9 @@
         </main>
         <footer>
             <div class="underbar">
-                <p class="home"><i class="fas fa-home fa-2x" ></i></p>
-                <p class="search"><i class="fas fa-search fa-2x"></i></p>
-                <p class="account"><i class="fas fa-user fa-2x"></i></p>
+                <a class="home" href=""><i class="fas fa-home fa-2x" ></i></a>
+                <a class="search" href=""><i class="fas fa-search fa-2x"></i></a>
+                <a class="account" href="/user"><i class="fas fa-user fa-2x"></i></a>
             </div>
         </footer>
     </body>
