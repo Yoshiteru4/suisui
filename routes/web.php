@@ -29,4 +29,6 @@ Route::get('/payment_check','PaymentController@PaymentPage');
 
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
+Route::get('/restaurant_list','RestaurantController@RestaurantShowPage');
+
 Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
