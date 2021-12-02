@@ -35,3 +35,7 @@ Route::get('/restaurant_list','RestaurantController@RestaurantShowPage');
 Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
 
 Route::get('/user', 'UserController@UserPage');
+
+Route::get('/welcome', 'WelcomeController@WelcomePage');
+
+Route::get('/search', 'SearchController@SearchPage');
