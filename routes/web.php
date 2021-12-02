@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/menu_list','MenuController@MenuPage');
 
 Route::get('/detail','MenuController@DetailPage');
@@ -30,3 +31,5 @@ Route::get('/payment_check','PaymentController@PaymentPage');
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
 Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
+
+Route::get('/user', 'UserController@UserPage');
