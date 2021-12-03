@@ -39,3 +39,5 @@ Route::get('/user', 'UserController@UserPage');
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
 Route::get('/search', 'SearchController@SearchPage');
+
+Route::get('/favorite','UserController@FavoritePage');
