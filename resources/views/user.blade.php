@@ -2,7 +2,7 @@
 
    @section('title', 'ここに入れたいタイトルを書く')
 
-   @section('top','アカウント')
+   @section('top','Suisui')
 
 
    @section('content')
@@ -17,8 +17,8 @@
    </head>
    <body>
       <div class="user">
-         <h2>基本情報</h2>
-         <h2>お気に入り一覧</h2>
+         <h2>アカウント情報</h2>
+         <h2><a href="/favorite">お気に入り一覧</a></h2>
          <h2>決済方法</h2>
       </div>
    </body>
