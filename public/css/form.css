@@ -38,7 +38,7 @@
      border-top: solid 5px #FD9940;
      border-bottom: solid 5px #FD9940;
  }
-.underbar{
+ .underbar{
     color: #FD9940;
     display: flex;
     flex-direction: row;
@@ -48,23 +48,25 @@
     bottom: 0; 
     width: 100%;
     height: 10%;
-    padding: 8px 19px;
+    padding: 8px 0px;
     background: #FFF1AB;
     border-top: solid 5px #FD9940;
     border-bottom: solid 5px #FD9940;
     position: fixed;
  }
  .home{
+    color: #FD9940;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
     
  }
  .search{
+    color: #FD9940;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
  }
  .account{
+    color: #FD9940;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
  }
- 
