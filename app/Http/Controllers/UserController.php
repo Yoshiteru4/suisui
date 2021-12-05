@@ -12,5 +12,9 @@ class UserController extends Controller
     {
         return view('user');
     }
+    public function FavoritePage()
+    {
+        return view('favorite');
+    }
     
 }

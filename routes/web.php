@@ -39,5 +39,3 @@ Route::get('/search','MenuController@search');
 Route::get('/index','MenuController@index');
 
 Route::get('/user', 'UserController@UserPage');
-
-Route::get('/welcome', 'WelcomeController@WelcomePage');
