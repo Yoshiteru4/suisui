@@ -38,4 +38,12 @@ Route::get('/search','MenuController@search');
 //ユーザー一覧と検索画面
 Route::get('/index','MenuController@index');
 
+
+Route::get('/search', 'SearchController@SearchPage');
+
+Route::get('/favorite','UserController@FavoritePage');
+
+Route::get('/user/{id}/edit' , 'UserController@edit');
+
 Route::get('/user', 'UserController@UserPage');
+
