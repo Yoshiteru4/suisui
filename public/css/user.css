@@ -21,10 +21,13 @@ p{
    color: #000000;
 }
 h2{
-   margin-bottom: 1rem;
+   margin-bottom: 10px;
 }
 .edit{
    display: flex;
    flex-direction: row;
    justify-content: end;
+}
+h3{
+   color: #000000;
 }
