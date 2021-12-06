@@ -17,7 +17,7 @@
    </head>
    <body>
       <div class="user">
-            <h2>アカウント情報</h2>
+            <h2>＜アカウント情報＞</h2>
             <div class="account">
                <h3>名前</h3>
                <p>・{{ $user->name }}</p>
