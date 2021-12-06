@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 8px 19px;
+    background:#FFF1AB;
+    border-top: solid 5px #FD9940;
+    border-bottom: solid 5px #FD9940;
+ }
+ .top{
+    font-size: 60px;
+    color: #FD9940;
+    font-family: Arvo;
+    font-weight: bold;
+    text-shadow:
+    -3px -3px 0 #222,
+    3px -3px 0 #222,
+    -3px 3px 0 #222,
+    3px 3px 0 #222,
+    4px 4px 0 #FD9940,
+    5px 5px 0 #FD9940,
+    6px 6px 0 #FD9940,
+    7px 7px 0 #FD9940;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    text-align: center;
+ 
+ }
+ @media screen and (max-width:780px) {
+    .top{
+       font-size: 30px;
+       transform: scaleY(0.8);
+       -webkit-transform: scaleY(0.8);
+       -moz-transform: scaleY(0.8);
+    }
+ }
+ .underbar{
+    color: #FD9940;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #FD9940;
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+    height: 10%;
+    padding: 8px 0px;
+    background: #FFF1AB;
+    border-top: solid 5px #FD9940;
+    border-bottom: solid 5px #FD9940;
+    position: fixed;
+ }
+ .home{
+    color: #FD9940;
+    font-size: 20px;
+    margin-top: 25px;
+    
+ }
+ .search{
+    color: #FD9940;
+    font-size: 20px;
+    margin-top: 25px;
+ }
+ .account{
+    color: #FD9940;
+    font-size: 20px;
+    margin-top: 25px;
+ }

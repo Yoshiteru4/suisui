@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
+        <title>ホーム画面</title>
     </head>
     <body>
         <header>
@@ -29,8 +29,8 @@
         </main>
         <footer>
             <div class="underbar">
-                <a class="home" href="/welcome"><i class="fas fa-home fa-2x" ></i></a>
-                <a class="search" href="/search"><i class="fas fa-search fa-2x"></i></a>
+                <a class="home" href="/"><i class="fas fa-home fa-2x" ></i></a>
+                <a class="search" href="/index"><i class="fas fa-search fa-2x"></i></a>
                 <a class="account" href="/user"><i class="fas fa-user fa-2x"></i></a>
             </div>
         </footer>

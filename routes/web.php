@@ -30,12 +30,15 @@ Route::get('/payment_check','PaymentController@PaymentPage');
 
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
-Route::get('/restaurant_list','RestaurantController@RestaurantShowPage');
+
+Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
 
 //検索結果を表示する
 Route::get('/search','MenuController@search');
 
 //ユーザー一覧と検索画面
 Route::get('/index','MenuController@index');
+// ジャンル検索
+Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
 
 Route::get('/user', 'UserController@UserPage');

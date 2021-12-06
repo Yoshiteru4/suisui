@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <title>検索ページ</title>
+    <title>@yield('top')</title>
   <!-- 必要なメタタグ -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,12 +12,11 @@
     <div class="container" style="margin-top:50px;">
       <ul class="nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link active" href="{{ url('/')}}">検索とメニューリスト</a>
+      <a class="nav-link active" href="{{ url('/index')}}">@yield('search')</a>
     </li>
   </ul>
       @yield('content')
     </div>
-    ...
 
   <!-- オプションのJavaScript -->
   <!-- 最初にjQuery、次にPopper.js、次にBootstrap JS -->
