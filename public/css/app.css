@@ -10961,4 +10961,20 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+.underbar{
+  color: #FD9940;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #FD9940;
+  position: absolute;
+  bottom: 0; 
+  width: 100%;
+  height: 10%;
+  padding: 8px 0px;
+  background: #FFF1AB;
+  border-top: solid 5px #FD9940;
+  border-bottom: solid 5px #FD9940;
+  position: fixed;
+}
 
