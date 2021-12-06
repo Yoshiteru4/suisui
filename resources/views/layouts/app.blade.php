@@ -33,6 +33,7 @@
                     <form action="/logout" method="post">
                         @csrf
                     <input type="submit" value="ログアウト">
+                    </form>
                     @else
                         <a class="log" href="{{ route('login') }}">ログイン</a>
                         @if (Route::has('register'))

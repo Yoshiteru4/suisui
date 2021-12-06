@@ -16,6 +16,7 @@
         <form action="/logout" method="post">
             @csrf
         <input type="submit" value="ログアウト">  
+        </form>
     </header>
     <main>
         @yield('content')
