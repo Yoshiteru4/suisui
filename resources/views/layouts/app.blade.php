@@ -26,7 +26,7 @@
 <body>
 
     <header>
-        <h1 class="top">Suisui</h1>
+        <h1 class="top">SuiSui</h1>
             @if (Route::has('login'))
                 <div class="login">
                     @auth
@@ -43,7 +43,7 @@
             @endif
     </header>
     <main>
-        <h1>SuiSui</h1>
+        @yield('content')
     </main>
     <footer>
         <div class="underbar">
