@@ -50,3 +50,5 @@ Route::get('/user/{id}/edit' , 'UserController@edit');
 
 Route::get('/user', 'UserController@UserPage');
 
+Route::get('/welcome', 'WelcomeController@WelcomePage');
+
