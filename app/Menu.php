@@ -8,4 +8,8 @@ class Menu extends Model
 {
     //
     protected $fillable = ['food','price','user_id'];
+    public function restaurants()
+    {
+        return $this->belongsTo('App\Restaurant');
+    }
 }

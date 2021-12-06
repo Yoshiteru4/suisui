@@ -1,4 +1,13 @@
+<header>
+  <h1 class="top">メニュー検索</h1>
+</header>
+
+
 @extends('layouts.defalt')
+
+@section('top','検索ページ')
+
+@section('search','検索をリセット')
 
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @section('content')
@@ -13,11 +22,7 @@
   </div>
   <div class="form-group">
     <label>値段</label>
-    <input type="text" class="form-control col-md-5" placeholder="値段を入力してください" name="price" value="{{ old("name")}}">
-  </div>
-  <div class="form-group">
-    <label>〜</label>
-    <input type="text" class="form-control col-md-5" placeholder="値段を入力してください" name="price" value="{{ old("name")}}">
+    <input type="text" class="form-control col-md-5" placeholder="最低金額を入力してください" name="price" value="{{ old("name")}}">
   </div>
   <button type="submit" class="btn btn-primary col-md-5">検索</button>
 </div>
@@ -28,23 +33,26 @@
 <div style="margin-top:50px;">
 
 @if(!empty($message))
+<h1>検索結果</h1>
 <div class="alert alert-primary" role="alert">{{$message}}</div>
 @endif
 
 <h1>メニューリスト</h1>
+@if(isset($menus))
 <table class="table">
   <tr>
     <th>料理名</th>
     <th>値段</th>
-    <th>番号</th>
   </tr>
-@foreach($menus as $menu)
-  <tr>
-    <td>{{$menu->food}}</td>
-    <td>{{$menu->price}}円</td>
-    <td>{{$menu->user_id}}</td>
-  </tr>
-@endforeach
+  @foreach($menus as $menu)
+    <tr>
+      <td>{{$menu->food}}</td>
+      <td>{{$menu->price}}円</td>
+      {{-- <td>{{$menu->id->name}}</td> --}}
+    </tr>
+  @endforeach
 </table>
+@endif
 </div>
+
 @endsection
