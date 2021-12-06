@@ -41,3 +41,5 @@ Route::get('/welcome', 'WelcomeController@WelcomePage');
 Route::get('/search', 'SearchController@SearchPage');
 
 Route::get('/favorite','UserController@FavoritePage');
+
+Route::get('/user/{id}/edit' , 'UserController@edit');

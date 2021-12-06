@@ -17,3 +17,14 @@ a{
 a{
    color: #000000;
 }
+p{
+   color: #000000;
+}
+h2{
+   margin-bottom: 1rem;
+}
+.edit{
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+}
