@@ -10,7 +10,20 @@ class UserController extends Controller
 {
     public function UserPage()
     {
-        return view('user');
+        $user = Auth::user();
+        return view('user',['user'=>$user]);
     }
+
+    public function FavoritePage()
+    {
+        return view('favorite');
+    }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('useredit', ['user'=>$user]);
+    }
+
     
 }

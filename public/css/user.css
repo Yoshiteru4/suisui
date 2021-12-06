@@ -1,0 +1,33 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+ul{
+   list-style: none;
+}
+a{
+   text-decoration: none;
+}
+.user{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+a{
+   color: #000000;
+}
+p{
+   color: #000000;
+}
+h2{
+   margin-bottom: 10px;
+}
+.edit{
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+}
+h3{
+   color: #000000;
+}

@@ -32,10 +32,18 @@ Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage');
 
-// Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
+//検索結果を表示する
+Route::get('/search','MenuController@search');
+
+//ユーザー一覧と検索画面
+Route::get('/index','MenuController@index');
+
+
+Route::get('/search', 'SearchController@SearchPage');
+
+Route::get('/favorite','UserController@FavoritePage');
+
+Route::get('/user/{id}/edit' , 'UserController@edit');
 
 Route::get('/user', 'UserController@UserPage');
 
-Route::get('/welcome', 'WelcomeController@WelcomePage');
-
-Route::get('/search', 'SearchController@SearchPage');

@@ -5,3 +5,15 @@ h1{
    padding-top: 150px;
    text-align: center;
 }
+
+.order-menu{
+   padding-bottom: 40px;
+}
+.quantity{
+   padding-bottom: 40px;
+}
+
+.btn{
+   padding-top: 50px;
+   text-align: center;
+}
