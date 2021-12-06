@@ -42,7 +42,7 @@ Route::get('/index','MenuController@index');
 Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
 
 
-Route::get('/search', 'SearchController@SearchPage');
+// Route::get('/search', 'SearchController@SearchPage');
 
 Route::get('/favorite','UserController@FavoritePage');
 
