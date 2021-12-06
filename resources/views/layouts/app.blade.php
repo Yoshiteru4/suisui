@@ -43,7 +43,7 @@
             @endif
     </header>
     <main>
-        @yield('content')
+        <h1>SuiSui</h1>
     </main>
     <footer>
         <div class="underbar">
