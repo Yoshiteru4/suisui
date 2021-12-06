@@ -32,7 +32,7 @@ Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage');
 
-Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
+// Route::get('/timeline', 'TweetController@showTimelinePage')->name('timeline');
 
 Route::get('/user', 'UserController@UserPage');
 

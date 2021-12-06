@@ -12,7 +12,10 @@
 </head>
 <body>
     <header>
-        <h1 class="top">@yield('top')</h1>    
+        <h1 class="top">@yield('top')</h1>  
+        <form action="/logout" method="post">
+            @csrf
+        <input type="submit" value="ログアウト">  
     </header>
     <main>
         @yield('content')
