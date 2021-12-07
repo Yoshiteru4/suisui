@@ -52,3 +52,6 @@ Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
+// 支払い・クレジット系
+Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::post('/payment','PaymentController@payment');
