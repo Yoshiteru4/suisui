@@ -48,7 +48,7 @@
     <footer>
         <div class="underbar">
             <a class="home" href="/welcome"><i class="fas fa-home fa-2x" ></i></a>
-            <a class="search" href="/search"><i class="fas fa-search fa-2x"></i></a>
+            <a class="search" href="/index"><i class="fas fa-search fa-2x"></i></a>
             <a class="account" href="/user"><i class="fas fa-user fa-2x"></i></a>
         </div>
     </footer>
