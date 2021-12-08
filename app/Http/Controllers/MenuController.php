@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MenuController extends Controller
 {
     //
-    public function indexd()
+    public function index()
     {
       $menus = Menu::all();
       return view('menu_list',['menus='=>$menus]);
