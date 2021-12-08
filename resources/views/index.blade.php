@@ -37,22 +37,25 @@
 <div class="alert alert-primary" role="alert">{{$message}}</div>
 @endif
 
-<h1>メニューリスト</h1>
+<h1 class="menu-list">メニューリスト</h1>
 @if(isset($menus))
-<table class="table">
-  <tr>
-    <th>料理名</th>
-    <th>値段</th>
-  </tr>
-  @foreach($menus as $menu)
-    <tr>
-      <td>{{$menu->food}}</td>
-      <td>{{$menu->price}}円</td>
-      {{-- <td>{{$menu->id->name}}</td> --}}
-    </tr>
-  @endforeach
-</table>
+@foreach($menus as $menu)
+<div class="menu-wrapper">
+  {{-- <div class="position-absolute py-2 px-3" style="left: 0; bottom: 20px; color: white; background-color: rgba(0, 0, 0, 0.70)">
+    <i class="fas fa-yen-sign"></i> --}}
+    <div class="menu-card">
+    <img src="" alt="">
+    <h4>料理名：{{$menu->food}}</h4>
+    <h4>値段：{{$menu->price}}円</h4>
+    <input type="submit" value="詳細を見る">
+  </div>
+</div>
+
+@endforeach
 @endif
+
+
+    
 </div>
 
 @endsection

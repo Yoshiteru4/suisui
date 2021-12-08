@@ -34,10 +34,10 @@ Route::get('/payment_finish','PaymentController@PaymentLastPage');
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
 
 //検索結果を表示する
-Route::get('/search','MenuController@search');
+Route::get('/search','SearchController@search');
 
 //ユーザー一覧と検索画面
-Route::get('/index','MenuController@index');
+Route::get('/index','SearchController@index');
 // ジャンル検索
 Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
 
@@ -46,7 +46,7 @@ Route::get('/genre_search','SearchController@genre_search')->name('genre_search'
 
 Route::get('/favorite','UserController@FavoritePage');
 
-Route::get('/user/{id}/edit' , 'UserController@edit');
+Route::get('/user/{id}/edit','UserController@edit');
 
 Route::put('/user' , 'UserController@update');
 
@@ -56,6 +56,8 @@ Route::get('/welcome', 'WelcomeController@WelcomePage');
 
 // 支払い・クレジット系
 Route::get('/payment', 'PaymentController@index')->name('payment');
+
+Route::get('/payment_finish', 'PaymentController@finish');
 
 Route::post('/payment','PaymentController@payment');
 
