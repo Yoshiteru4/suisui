@@ -74,10 +74,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('SuiSui Captain はこちらからログイン') }}</div>
+                <div class="card-header">{{ __('SuiSui Restaurant はこちらからログイン') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="/restaurant_account">
                         @csrf
 
                         <div class="form-group row">
