@@ -48,11 +48,27 @@ Route::get('/favorite','UserController@FavoritePage');
 
 Route::get('/user/{id}/edit','UserController@edit');
 
+Route::put('/user' , 'UserController@update');
+
 Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
 // 支払い・クレジット系
 Route::get('/payment', 'PaymentController@index')->name('payment');
+
 Route::get('/payment_finish', 'PaymentController@finish');
+
 Route::post('/payment','PaymentController@payment');
+
+Route::get('/create', 'MenuController@create');
+
+Route::post('/menu_list','MenuController@store');
+
+Route::get('/menu_list','MenuController@show');
+
+
+
+
+
+

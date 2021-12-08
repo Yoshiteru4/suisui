@@ -11,14 +11,28 @@ use Illuminate\Support\Facades\Auth;
 class MenuController extends Controller
 {
     //
-    public function MenuPage()
+    public function index()
     {
-        return view('menu_list');
+      $menus = Menu::all();
+      return view('menu_list',['menus='=>$menus]);
+    }
+    public function create()
+    {
+      return view('create');
     }
 
-    public function DetailPage()
+    public function store(Request $request)
     {
-
-        return view('detail');
+        $menus = new Menu();
+        $menus->restaurant_id=1;
+        $menus->food = $request->food;
+        $menus->price = $request->price;
+        $menus->save();
+        return redirect('/menu_list');
+    }
+    public function show()
+    {
+      $menus = Menu::all();
+      return view('/menu_list', ['menus'=>$menus]);
     }
 }
