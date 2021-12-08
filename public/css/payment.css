@@ -2,14 +2,19 @@ h1{
     text-align: center;
 }
 .order-check{
-    padding-top: 150px;
+    /* padding-top: 150px; */
     text-align: center;
 }
 
 .order-amount{
     text-align: center;
-    padding-top: 50px;
+    /* padding-top: 50px; */
 }
 .btn{
+    text-align: center;
+}
+
+.payment-check{
+    padding-top: 100px;
     text-align: center;
 }
