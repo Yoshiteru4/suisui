@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Menu;
 use App\Restaurant;
 use Illuminate\Support\Facades\Auth;
+use JD\Cloudder\Facades\Cloudder;
 
 
 class MenuController extends Controller
@@ -27,6 +28,17 @@ class MenuController extends Controller
         $menus->restaurant_id=1;
         $menus->food = $request->food;
         $menus->price = $request->price;
+        if ($image = $request->file('image')) {
+          $image_path = $image->getRealPath();
+          Cloudder::upload($image_path, null);
+
+          $publicId = Cloudder::getPublicId();
+          $logoUrl = Cloudder::secureShow($publicId, 
+             
+          );
+          $menus->image_path = $logoUrl;
+          $menus->public_id  = $publicId;
+      }
         $menus->save();
         return redirect('/menu_list');
     }
