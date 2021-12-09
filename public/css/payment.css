@@ -12,9 +12,33 @@ h1{
 }
 .btn{
     text-align: center;
+    padding: 10px;
+}
+button{
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    width: 80px;
+    font-weight: bold;
 }
 
 .payment-check{
     padding-top: 100px;
     text-align: center;
+}
+.button1{
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    width: 100px;
+    font-weight: bold;
+}
+.btn2{
+    padding-top: 20px;
 }

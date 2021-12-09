@@ -1,6 +1,6 @@
    @extends('layouts.form')
 
-   @section('title', 'ここに入れたいタイトルを書く')
+   @section('title', 'アカウント編集ページ')
 
    @section('top','Suisui')
 
@@ -24,13 +24,25 @@
                <h3>メールアドレス</h3>
                <p>・{{ $user->email }}</p>
                <div class="edit">
-                  <form action="/user/{{ $user->id }}/edit" method="get">
-                     <input type="submit" value="編集">
-                  </form>
+                  <div class="edit-btn">
+                     <form action="/user/{{ $user->id }}/edit" method="get">
+                        <input type="submit" value="編集" class="btn">
+                     </form>
+                  </div>
                </div>
             </div>
             <h2><a href="/favorite" class="favorite">お気に入り一覧</a></h2>
             <h2>決済方法</h2>
+         <form action="{{ route('payment') }}" method="post" class="text-center mt-xxl">
+            @csrf
+            <script
+               src="https://checkout.pay.jp/"
+               class="payjp-button"
+               data-key="pk_test_720a7b7eeb3f7e4927d6e3be"
+               data-text="カード情報を入力"
+               data-submit-text="カードを登録する"
+                ></script>
+         </form>
       </div>
    </body>
    </html>

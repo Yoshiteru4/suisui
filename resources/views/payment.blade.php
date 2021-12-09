@@ -15,9 +15,9 @@
         <span>合計金額</span><span>--円</span>
     </div>
     <div class="btn">
-    <input type="submit" value="注文確定">
+      <button type="button" onClick="history.back()" class="button">戻る</button>
+    </div>
 </form>
-</div>
 
 
 <div class="payment-check">
@@ -55,7 +55,9 @@
             </div>
           </div>
         @endforeach
-        <button type="submit">選択したカードで決済する</button>
+        <div class="btn2">
+          <button type="submit" class="button1">注文確定</button>
+        </div>
       </form>
     @endif
 
