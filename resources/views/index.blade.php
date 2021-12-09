@@ -41,21 +41,17 @@
 @if(isset($menus))
 @foreach($menus as $menu)
 <div class="menu-wrapper">
-  {{-- <div class="position-absolute py-2 px-3" style="left: 0; bottom: 20px; color: white; background-color: rgba(0, 0, 0, 0.70)">
-    <i class="fas fa-yen-sign"></i> --}}
     <div class="menu-card">
-    <img src="" alt="">
-    <h4>料理名：{{$menu->food}}</h4>
-    <h4>値段：{{$menu->price}}円</h4>
-    <input type="submit" value="詳細を見る">
+      <img src="" alt="">
+      <h4>料理名：{{$menu->food}}</h4>
+      <h4>値段：{{$menu->price}}円</h4>
+      <h4>店舗名：</h4>
+      <input type="submit" value="詳細を見る">
   </div>
 </div>
 
 @endforeach
 @endif
-
-
-    
 </div>
 
 @endsection

@@ -42,14 +42,3 @@ header{
        -moz-transform: scaleY(0.8);
     }
  }
- .menu-list{
-    text-align: center;
-    padding-bottom: 100px;
- }
- .menu-card{
-    text-align: center;
-    width: 50%;
-    height: 70%;
-    margin: 0 auto;
-    background-color: gray;
- }
