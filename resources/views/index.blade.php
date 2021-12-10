@@ -45,7 +45,7 @@
       <img src="" alt="">
       <h4>料理名：{{$menu->food}}</h4>
       <h4>値段：{{$menu->price}}円</h4>
-      <h4>店舗名：</h4>
+      <h4>店舗名：{{ $menu->restaurant->name }}</h4>
       <input type="submit" value="詳細を見る">
   </div>
 </div>

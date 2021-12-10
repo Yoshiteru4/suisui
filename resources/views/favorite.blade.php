@@ -1,4 +1,4 @@
-@extends('layouts.form')
+@extends('layouts.app')
 
    @section('title', 'ここに入れたいタイトルを書く')
 
