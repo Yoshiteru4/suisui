@@ -42,7 +42,7 @@
 @foreach($menus as $menu)
 <div class="menu-wrapper">
     <div class="menu-card">
-      <img src="" alt="">
+      <h4>{{$menu->image}}</h4>
       <h4>料理名：{{$menu->food}}</h4>
       <h4>値段：{{$menu->price}}円</h4>
       <h4>店舗名：{{ $menu->restaurant->name }}</h4>

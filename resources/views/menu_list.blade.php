@@ -18,10 +18,7 @@
             <form action="/detail" method="get">
                <input type="submit" value="注文">
             </form>
-            <div style="padding10px 40px">
-               @if($menu->favoriteBy(Auth::user())->count > 0)
-               <a data-remote="true" rel="nofollow" data-method="DELETE" href="/favorites/{{ $menu->favoriteBy(Auth::user())->first0rfail()->id }}">お気に入り</a>
-            </div>
+            
          </div>
    @endforeach
 </div> 
