@@ -34,7 +34,7 @@ class MenuController extends Controller
 
           $publicId = Cloudder::getPublicId();
           $logoUrl = Cloudder::secureShow($publicId, 
-             
+
           );
           $menus->image_path = $logoUrl;
           $menus->public_id  = $publicId;
@@ -47,4 +47,10 @@ class MenuController extends Controller
       $menus = Menu::all();
       return view('/menu_list', ['menus'=>$menus]);
     }
+    public function DetailPage()
+    {
+        return view('/detail');
+    }
+    
+
 }

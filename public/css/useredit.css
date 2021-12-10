@@ -4,9 +4,14 @@
    align-items: center;
    justify-content: center;
 }
-input{
+
+h3{
    margin-top: 10px;
 }
-h4{
-   margin-top: 5px;
+.human{
+   color: #FD9940;
+   margin-top: 1rem;
+}
+.btn{
+   margin-top: 1rem;
 }
