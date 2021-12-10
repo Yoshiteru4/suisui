@@ -30,7 +30,7 @@
     <script
       src="https://checkout.pay.jp/"
       class="payjp-button"
-      data-key="pk_test_720a7b7eeb3f7e4927d6e3be"
+      data-key="{{ config('services.payjp.public_key') }}"
       data-text="カード情報を入力"
       data-submit-text="カードを登録する"
      ></script>
