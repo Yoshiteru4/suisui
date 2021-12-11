@@ -18,6 +18,7 @@
             <form action="/detail" method="get">
                <input type="submit" value="注文">
             </form>
+
             <div style="padding:10px 40px">
                @if($menu->favoritedBy(Auth::user())->count() > 0)
                <a href="/favorites/{{ $menu->favoritedBy(Auth::user())->firstOrFail()->id }}"><i class="fas fa-heart-broken fa-2x hurt"></i></a>
