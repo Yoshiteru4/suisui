@@ -29,7 +29,7 @@
                 @endif
         </header>
         <main>
-            <P class="text"></P>
+            <h1 class="homes"><i class="fas fa-home"></i>ホーム</h1>
         </main>
         <footer>
             <div class="underbar">
