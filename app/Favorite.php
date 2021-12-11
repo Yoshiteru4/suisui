@@ -9,7 +9,7 @@ class Favorite extends Model
     //
     protected $fillable = ['menu_id','user_id'];
 
-    public function reply()
+    public function menu()
     {
         return $this->belongsTo(Menu::class);
     }

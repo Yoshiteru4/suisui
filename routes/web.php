@@ -67,6 +67,12 @@ Route::post('/menu_list','MenuController@store');
 
 Route::get('/menu_list','MenuController@show');
 
+Route::get('/menus/{menu_id}/favorites','FavoriteController@store');
+
+Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
+
+Route::get('/favorite','FavoriteController@index');
+
 
 
 

@@ -16,7 +16,8 @@ class UserController extends Controller
 
     public function FavoritePage()
     {
-        return view('favorite');
+        $user = Auth::user();
+        return view('favorite',['user'=>$user]);
     }
 
     public function edit($id)
