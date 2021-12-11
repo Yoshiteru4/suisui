@@ -10,14 +10,15 @@
 
 <div class="menubox">
    @foreach($menus as $menu)
+      <form action="/detail" method="post">
+         @csrf
          <div class="menu">
             <img src="{{ $menu->image_path }}" alt="画像">
             <p>商品名：{{ $menu->food }}</p>
             <p>店舗名：{{ $menu->restaurant->name }}</p>
             <p>値段：{{ $menu->price }}円</p>
-            <form action="/detail" method="get">
                <input type="submit" value="注文">
-            </form>
+      </form>
             
          </div>
    @endforeach

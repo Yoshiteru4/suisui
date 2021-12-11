@@ -49,8 +49,14 @@ class MenuController extends Controller
     }
     public function DetailPage()
     {
-        return view('/detail');
+        return view('detail');
     }
-    
-
+    public function ordershow(Request $request)
+    {
+      $menuQuantity = $request->input('menuQuantity');
+      $personQuantity = $request->input('personQuantity');
+      $Comedate = $request->input('Comedate');
+      $ComeTime = $request->input('ComeTime');
+      return view('payment',compact('menuQuantity','personQuantity','Comedate','ComeTime'));
+    }
 }

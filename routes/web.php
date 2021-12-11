@@ -26,23 +26,17 @@ Route::get('/menu_list','MenuController@MenuPage');
 
 Route::get('/detail','MenuController@DetailPage');
 
-Route::get('/payment_check','PaymentController@PaymentPage');
-
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
-
 
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
 
-//検索結果を表示する
 Route::get('/search','SearchController@search');
 
-//ユーザー一覧と検索画面
 Route::get('/index','SearchController@index');
-// ジャンル検索
+
 Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
 
-
-// Route::get('/search', 'SearchController@SearchPage');
+Route::post('/payments','MenuController@ordershow');
 
 Route::get('/favorite','UserController@FavoritePage');
 
@@ -55,11 +49,11 @@ Route::get('/user', 'UserController@UserPage');
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
 // 支払い・クレジット系
-Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::post('/payment', 'PaymentController@index')->name('payment');
 
 Route::get('/payment_finish', 'PaymentController@finish');
 
-Route::post('/payment','PaymentController@payment');
+Route::post('/payment_check','PaymentController@payment');
 
 Route::get('/create', 'MenuController@create');
 

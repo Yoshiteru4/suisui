@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\User;
-use Payjp\Charge;
+// use App\User;
+// use App\Order;
+// use Payjp\Charge;
 
 class PaymentController extends Controller
 {
     //
-    public function PaymentPage(){
-        return view('payment_check');
-    }
-    public function index()
+    public function index(Request $request)
     {
-      
+        // dd($request->menuQuantity);
+        $menuQuantity = $request->menuQuantity;
+        $personQuantity = $request->personQuantity;
+        $Comedate = $request->Comedate;
+        $ComeTime = $request->ComeTime;
         $user = auth()->user();
         
         $cardList = [];
@@ -37,7 +39,7 @@ class PaymentController extends Controller
           ];
             }
         }
-            return view('payment', ['cardList'=> $cardList]);
+            return view('payment', ['cardList'=> $cardList, 'menuQuantity'=>$menuQuantity, 'personQuantity'=>$personQuantity,'Comedate'=>$Comedate,'ComeTime'=>$ComeTime]);
     }
     public function payment(Request $request){
       if (empty($request->get('payjp-token')) && !$request->get('payjp_card_id')) {
@@ -90,6 +92,11 @@ class PaymentController extends Controller
          DB::commit();
     
         return redirect('/payment_finish')->with('message', '支払いが完了しました');
+
+        // $order = new Order();
+        // $order-> menu_quantity= $request->menu_quantiy;
+        // // dd($request);
+        // $order->save();
     
       } catch (\Exception $e) {
         Log::error($e);
