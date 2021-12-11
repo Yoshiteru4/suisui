@@ -44,8 +44,7 @@
   @if (!empty($cardList))
     <p>もしくは登録済みのカードで支払い</p>
     <form action="/payment_check" method="post">
-      @csrf
-      
+      @csrf    
         @foreach ($cardList as $card)
           <div class="card-item">
             <label>
@@ -61,7 +60,7 @@
         @endforeach
         <div class="btn2">
           <button type="submit" class="button1">注文確定</button>
-        </div>
+        </div
       </form>
     @endif
 

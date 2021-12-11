@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-// use App\User;
-// use App\Order;
-// use Payjp\Charge;
+use App\User;
+use App\Order;
+use Payjp\Charge;
 
 class PaymentController extends Controller
 {
