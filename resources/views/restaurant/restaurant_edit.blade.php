@@ -9,7 +9,6 @@
                 <h3>メールアドレス</h3>
             </div>
             <h2>掲載メニュー</h2>
-            
         </div>
     </main>
 @endsection

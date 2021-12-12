@@ -51,13 +51,16 @@ Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
-Route::get('/restaurant_account', 'RestaurantController@RestaurantAccount');
+// Route::get('/restaurant_account', 'RestaurantController@RestaurantAccount')->name('restaurant');
 
 Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
 
-Route::get('/restaurant_account', 'OrderController@index');
+// Route::get('/restaurant_account', 'OrderController@index');
 
 Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
 
-
+Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function(){
+    Auth::routes();
+    Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
+});
 

@@ -13,10 +13,5 @@
                 <h3>メールアドレス</h3>
             </div>
         </div>
-        {{-- <div class="edit">
-            <form action="/restaurant/{{ $user->id }}/edit" method="get">
-                <input type="submit" value="編集">
-            </form>
-        </div> --}}
     </main>
 @endsection
