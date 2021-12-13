@@ -20,7 +20,6 @@
                   <p>店舗名：{{ $favorite->menu->restaurant->name }}</p>
                </div>
          @endforeach
-         
       </div> 
    </div>
    <div class="paginate">{{ $favorites->links('vendor.pagination.semantic-ui') }}</div>
