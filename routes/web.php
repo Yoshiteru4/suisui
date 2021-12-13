@@ -51,13 +51,11 @@ Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
-Route::get('/restaurant_account', 'RestaurantController@RestaurantAccount');
-
-Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
-
-Route::get('/restaurant_account', 'OrderController@index');
+Route::get('/restaurant_account', 'RestaurantController@index');
 
 Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
 
+Route::get('/restaurant_detail', 'RestaurantController@Restaurantdetail');
 
+Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
 

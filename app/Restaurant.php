@@ -13,4 +13,6 @@ class Restaurant extends Model
     {
         return $this->hasmany('App\Menu');
     }
+
+    
 }
