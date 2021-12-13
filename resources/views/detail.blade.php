@@ -15,8 +15,12 @@
 <div class="order-detail">
 
 <div class="order-menu">
-<span>選んだメニュー  </span><span>
-  <select class="form" name="menuQuantity">
+<span>選んだメニュー: {{$menufood}}</span><span><br>
+<span>選んだメニューの金額: ¥{{$menuprice}}</span><span><br>
+<input type="hidden" name="menufood" value="{{$menufood}}">
+<input type="hidden" name="menuprice" value="{{$menuprice}}">
+
+  個数<select class="form" name="menuQuantity">
     <option value="1">1</option>
     @for ($i = 2; $i <= 10; $i++)
         <option value="{{ $i }}">{{ $i }}</option>

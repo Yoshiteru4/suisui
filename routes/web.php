@@ -24,7 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu_list','MenuController@MenuPage');
 
-Route::get('/detail','MenuController@DetailPage');
+Route::get('/detail','OrderController@DetailPage');
+
+Route::post('/detail','OrderController@store');
+
+Route::get('/mail','TestMailController@send');
 
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
@@ -36,7 +40,7 @@ Route::get('/index','SearchController@index');
 
 Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
 
-Route::post('/payments','MenuController@ordershow');
+Route::post('/payments','OrderController@ordershow');
 
 Route::get('/favorite','UserController@FavoritePage');
 

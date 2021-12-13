@@ -47,16 +47,4 @@ class MenuController extends Controller
       $menus = Menu::all();
       return view('/menu_list', ['menus'=>$menus]);
     }
-    public function DetailPage()
-    {
-        return view('detail');
-    }
-    public function ordershow(Request $request)
-    {
-      $menuQuantity = $request->input('menuQuantity');
-      $personQuantity = $request->input('personQuantity');
-      $Comedate = $request->input('Comedate');
-      $ComeTime = $request->input('ComeTime');
-      return view('payment',compact('menuQuantity','personQuantity','Comedate','ComeTime'));
-    }
 }

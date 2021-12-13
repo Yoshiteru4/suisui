@@ -5,19 +5,19 @@
 
 <h1>＜注文詳細確認＞</h1>
 
-<form action="payment_finish.blade.php" method="post">
+{{-- <form action="payment_finish.blade.php" method="post"> --}}
     <div class="order-check">
-        <span>選んだメニュー</span><span>{{$menuQuantity}}個</span><br>         
+        <span>選んだメニュー{{$menufood}}</span><span>{{$menuQuantity}}個</span><br>         
             <span>人数</span><span>{{$personQuantity}}人</span><br>
-        <span>来店日時{{$Comedate}}日</span><span>{{$ComeTime}}</span>
+        <span>来店日時{{$Comedate}}</span><span>{{$ComeTime}}</span>
     </div>
     <div class="order-amount">
-        <span>合計金額</span><span>--円</span>
+        <span>合計金額:¥ {{$totalprice}}</span><span></span>
     </div>
     <div class="btn">
       <button type="button" onClick="history.back()" class="button">戻る</button>
     </div>
-</form>
+{{-- </form> --}}
 
 
 <div class="payment-check">
@@ -27,6 +27,10 @@
 
   <form action="/payment" method="post" class="text-center mt-xxl">
     @csrf
+
+    <input type="hidden" name="menufood" value="{{$menufood}}">
+    <input type="hidden" name="menuprice" value="{{$menuprice}}">
+    <input type="hidden" name="totalprice" value="{{$totalprice}}">
     <input type="hidden" name="menuQuantity" value="{{$menuQuantity}}">
     <input type="hidden" name="personQuantity" value="{{$personQuantity}}">
     <input type="hidden" name="Comedate" value="{{$Comedate}}">
@@ -60,10 +64,9 @@
         @endforeach
         <div class="btn2">
           <button type="submit" class="button1">注文確定</button>
-        </div
-      </form>
+        </div>
     @endif
-
+      </form>
 </div>
 
 @endsection
