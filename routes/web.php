@@ -52,13 +52,24 @@ Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
-Route::get('/restaurant_account', 'RestaurantController@index');
+// restaurantアカウント群
+Route::get('/restaurant_account', 'RestaurantController@restaurant_account');
 
-Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
+Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function()
+{
+    Auth::routes();
+});
+
+Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
+
+// Route::get('/restaurant_account', 'RestaurantController@show');
 
 Route::get('/restaurant_detail', 'RestaurantController@Restaurantdetail');
 
 Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
+
+Route::get('/restaurant_orderhistory', 'RestaurantController@index');
+
 // 支払い・クレジット系
 Route::post('/payment', 'PaymentController@index')->name('payment');
 
