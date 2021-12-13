@@ -40,7 +40,7 @@ class MenuController extends Controller
           $menus->public_id  = $publicId;
       }
         $menus->save();
-        return redirect('/menu_list');
+        return redirect('/restaurant_detail');
     }
     public function show()
     {

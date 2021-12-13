@@ -78,3 +78,5 @@ Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
 
 Route::get('/favorite','FavoriteController@index');
 
+Route::get('/welcome','WelcomeController@show');
+

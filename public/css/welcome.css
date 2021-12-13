@@ -9,6 +9,7 @@ a{
    text-decoration: none;
 }
 .top{
+   text-align: center;
    font-size: 60px;
    color: #FD9940;
    font-family: Arvo;
@@ -50,8 +51,8 @@ header{
 .login{
    margin-left: 42%;
    color: #FD9940;
-   /* display: flex; */
-   /* flex-direction: column; */
+   display: flex;
+   flex-direction: column;
 }
 .log{
    color: #FD9940;
@@ -92,5 +93,38 @@ header{
    margin-top: 25px;
 }
 .homes{
+   margin-top: 40px;
    text-align: center;
+}
+.homemark{
+   
+   color: #FD9940;
+}
+.menu{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 1rem 10px 0 10px;
+}
+.menubox{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+   overflow: scroll;
+}
+img{
+   width: 400px;
+   height: 300px;
+   border-radius: 50%;
+}
+body{
+   background-color: #f0f0f0	;
+}
+.footer{
+   height: 140px;
+}
+.new{
+   color: #FD9940;
 }
