@@ -17,7 +17,7 @@ class RestaurantController extends Controller
 
     public function RestaurantAccount()
     {
-        return view('restaurant.auth.restaurant_account');
+        return view('restaurant.restaurant_account');
     }
 
     public function RestaurantEdit()

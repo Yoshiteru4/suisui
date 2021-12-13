@@ -61,6 +61,6 @@ Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhist
 
 Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function(){
     Auth::routes();
-    Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
 });
 
+Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
