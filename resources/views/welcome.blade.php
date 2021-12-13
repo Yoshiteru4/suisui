@@ -24,7 +24,6 @@
                                 <a class="sign" href="{{ route('register') }}">新規登録</a>
                             @endif
                         @endauth
-                        <a href="/restaurant_detail" class="new">お店の方はこちら</a>
                     </div>
                 @endif
         </header>
