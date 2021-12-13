@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="restaurant/login ">お店の方はこちら</a>
                 </div>
             </div>
         </div>
