@@ -31,6 +31,10 @@ Route::get('/payment_finish','PaymentController@PaymentLastPage');
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
 
 Route::get('/search','SearchController@search');
+//ユーザー一覧と検索画面
+Route::get('/index','MenuController@index');
+// ジャンル検索
+Route::get('/genre_search','SearchController@genre_search')->name('genre_search');
 
 Route::get('/index','SearchController@index');
 
@@ -48,6 +52,13 @@ Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
+Route::get('/restaurant_account', 'RestaurantController@index');
+
+Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
+
+Route::get('/restaurant_detail', 'RestaurantController@Restaurantdetail');
+
+Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
 // 支払い・クレジット系
 Route::post('/payment', 'PaymentController@index')->name('payment');
 
@@ -66,11 +77,4 @@ Route::get('/menus/{menu_id}/favorites','FavoriteController@store');
 Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
 
 Route::get('/favorite','FavoriteController@index');
-
-
-
-
-
-
-
 
