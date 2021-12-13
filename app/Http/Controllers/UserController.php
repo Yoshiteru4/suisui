@@ -16,14 +16,22 @@ class UserController extends Controller
 
     public function FavoritePage()
     {
-        return view('favorite');
+        $user = Auth::user();
+        return view('favorite',['user'=>$user]);
     }
 
-    public function edit()
+    public function edit($id)
     {
-        $user = Auth::user();
+        $user = User::find($id);
         return view('useredit', ['user'=>$user]);
     }
-
+    public function update(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->update();
+        return redirect('/user');
+    }
     
 }

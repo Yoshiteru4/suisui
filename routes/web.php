@@ -26,41 +26,71 @@ Route::get('/menu_list','MenuController@MenuPage');
 
 Route::get('/detail','MenuController@DetailPage');
 
-Route::get('/payment_check','PaymentController@PaymentPage');
-
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
 
-//検索結果を表示する
-Route::get('/search','MenuController@search');
-
+Route::get('/search','SearchController@search');
 //ユーザー一覧と検索画面
 Route::get('/index','MenuController@index');
 // ジャンル検索
 Route::get('/genre_search','SearchController@genre_search')->name('genre_search');
 
+Route::get('/index','SearchController@index');
 
-// Route::get('/search', 'SearchController@SearchPage');
+Route::get('/genre_search','SearchController@genre_search')->name('genre_search');;
+
+Route::post('/payments','MenuController@ordershow');
 
 Route::get('/favorite','UserController@FavoritePage');
 
-Route::get('/user/{id}/edit' , 'UserController@edit');
+Route::get('/user/{id}/edit','UserController@edit');
+
+Route::put('/user' , 'UserController@update');
 
 Route::get('/user', 'UserController@UserPage');
 
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
+
 // Route::get('/restaurant_account', 'RestaurantController@RestaurantAccount')->name('restaurant');
 
+Route::get('/restaurant_account', 'RestaurantController@index');
+
+Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
+
+Route::get('/restaurant_detail', 'RestaurantController@Restaurantdetail');
+
+
 Route::get('/restaurant_edit', 'RestaurantController@RestaurantEdit');
+// 支払い・クレジット系
+Route::post('/payment', 'PaymentController@index')->name('payment');
+
 
 // Route::get('/restaurant_account', 'OrderController@index');
 
-Route::get('/restaurant_orderhistory', 'RestaurantController@RestaurantOrderhistory');
+Route::get('/payment_finish', 'PaymentController@finish');
+
+
+Route::post('/payment_check','PaymentController@payment');
+
+Route::get('/create', 'MenuController@create');
+
+Route::post('/menu_list','MenuController@store');
+
+Route::get('/menu_list','MenuController@show');
+
+Route::get('/menus/{menu_id}/favorites','FavoriteController@store');
+
 
 Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function(){
     Auth::routes();
 });
 
 Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
+
+Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
+
+Route::get('/favorite','FavoriteController@index');
+
+

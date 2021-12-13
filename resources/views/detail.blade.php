@@ -10,32 +10,33 @@
 <h1>＜詳細選択＞</h1>
 
 
-<form action="payment_check.blade.php" method="post">
+<form action="/payments" method="post">
+  @csrf
 <div class="order-detail">
 
 <div class="order-menu">
-<span>選んだメニュー  </span><span><select name="個数">
+<span>選んだメニュー  </span><span>
+  <select class="form" name="menuQuantity">
     <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>個</span><br>
+    @for ($i = 2; $i <= 10; $i++)
+        <option value="{{ $i }}">{{ $i }}</option>
+    @endfor
+</select>個
 </div>
 
 <div class="quantity">
-<span>人数</span><span><select name="人数">
+<span>人数：</span>
+  <select class="form-control" name="personQuantity">
     <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>人</span><br>
+    @for ($i = 2; $i <= 10; $i++)
+        <option value="{{ $i }}">{{ $i }}</option>
+    @endfor
+</select>人
 </div>
 
 <div class="come-time"></div>
 <span>来店日時</span>
-<span><input type="date" id="today"><input type="time" name="example" min="08:00" max="22:00" value="08:00"></span>
+<span><input type="date" id="today" name="Comedate"><input type="time" name="ComeTime" min="08:00" max="22:00" value="08:00"></span>
 </div>
 </div>
 

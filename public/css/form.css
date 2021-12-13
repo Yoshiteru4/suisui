@@ -27,7 +27,6 @@ a{
    transform: scaleY(0.7);
    -webkit-transform: scaleY(0.7);
    -moz-transform: scaleY(0.7);
-
 }
 @media screen and (max-width:780px) {
    .top{

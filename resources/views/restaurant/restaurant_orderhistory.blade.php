@@ -1,10 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.restaurant')
 
 @section('content')
     <main>
         <div class="restaurant_orderhistory">
-            <h2>＜注文履歴一覧＞</h2>
-            <h2>＜データ可視化＞</h2>
+            <h2>＜注文履歴＞</h2>
+                @foreach ($R_orderhistories as $R_orderhistory)
+                    <P>{{ $R_orderhistory }}</P>
+                @endforeach
         </div>
     </main>
 @endsection
