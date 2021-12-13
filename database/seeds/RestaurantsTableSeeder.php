@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class RestaurantsTableSeeder extends Seeder
 {
@@ -13,22 +12,34 @@ class RestaurantsTableSeeder extends Seeder
     public function run()
     {
         //
-        // $table->increments('id');
-        //     $table->string('name');
-        //     $table->integer('telenumber');
-        //     $table->string('password');
-        //     $table->string('address');
-        //     $table->string('lunchhour');
-        //     $table->timestamps();
-        DB::table('restaurants')->insert([
-            'name' => '岡部商店',
-            'address' => '岡部町',
-            'lunchhour' => '9時~20時',
-        ]);
-        DB::table('restaurants')->insert([
+        DB::table('restaurants')->insert([ 
+            [
             'name' => 'キッチン笹野',
-            'address' => '笹野町',
-            'lunchhour' => '10時~21時',
-        ]);
+            'telenumber' => 00000,
+            'password' => '000000',
+            'address'=> '大阪府',
+            'lunchhour'=> '9時~18時',
+            'created_at' => new Datetime(),
+            'updated_at' => new Datetime()
+          ],
+            [
+            'name' => '長澤商店',
+            'telenumber' => 00000,
+            'password' => '000000',
+            'address'=> '兵庫',
+            'lunchhour'=> '10時~22時',
+            'created_at' => new Datetime(),
+            'updated_at' => new Datetime()
+          ],
+            [
+            'name' => '山本商店',
+            'telenumber' => 00000,
+            'password' => '000000',
+            'address'=> '東京',
+            'lunchhour'=> '9時~18時',
+            'created_at' => new Datetime(),
+            'updated_at' => new Datetime()
+          ],
+          ]);
     }
 }

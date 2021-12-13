@@ -17,9 +17,8 @@ class CreateMenusTable extends Migration
             $table->increments('id');
             $table->string('food');
             $table->integer('price');
-            $table->integer('user_id');
             $table->integer('restaurant_id');
-            $table->integer('genre_id');
+            $table->integer('genre_id')->nullable();
             $table->timestamps();
         });
     }

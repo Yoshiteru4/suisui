@@ -50,8 +50,8 @@ header{
 .login{
    margin-left: 42%;
    color: #FD9940;
-   display: flex;
-   flex-direction: column;
+   /* display: flex; */
+   /* flex-direction: column; */
 }
 .log{
    color: #FD9940;
@@ -90,4 +90,7 @@ header{
    color: #FD9940;
    font-size: 20px;
    margin-top: 25px;
+}
+.homes{
+   text-align: center;
 }

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('payjp_customer_id')->nullable()->comment('payjp顧客ID');
         });
     }
 
