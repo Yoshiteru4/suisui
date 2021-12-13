@@ -16,39 +16,35 @@ class RestaurantController extends Controller
         return view('restaurant_list',['restaurants' => $restaurants]);
     }
 
-
     public function RestaurantAccount()
     {
         return view('restaurant.restaurant_account');
     }
 
-
-
     public function RestaurantEdit()
     {
-        return view('restaurant_edit');
-    }
-
-    public function RestaurantOrderhistory()
-    {
-        $R_orderhistories = Order::all();
-        // dd($R_orderhistories);
-        return view('restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
+        return view('restaurant.restaurant_edit');
     }
 
     public function index()
     {
-        $orderlists = Order::all();
-        return view('restaurant_account', ['orderlists'=>$orderlists]);
+        $R_orderhistories = Order::all();
+        // dd($R_orderhistories);
+        return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
     }
 
+    // public function show()
+    // {
+    //     $orderlists = Order::all();
+    //     return view('restaurant_account', ['orderlists'=>$orderlists]);
+    // }
 
     public function __construct()
     {
         $this->middleware('auth:restaurant');
     }
 
-    public function index()
+    public function restaurant_account()
     {
         return view('restaurant.restaurant_account');
     }
@@ -56,8 +52,7 @@ class RestaurantController extends Controller
     public function Restaurantdetail()
     {
         $Restaurantdetails = Restaurant::all();
-        return view('restaurant_detail', ['Restaurantdetails'=>$Restaurantdetails]);
+        return view('restaurant.restaurant_detail', ['Restaurantdetails'=>$Restaurantdetails]);
     }
-
 
 }
