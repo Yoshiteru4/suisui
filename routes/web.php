@@ -55,6 +55,13 @@ Route::get('/welcome', 'WelcomeController@WelcomePage');
 // restaurantアカウント群
 Route::get('/restaurant_account', 'RestaurantController@restaurant_account');
 
+Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function()
+{
+    Auth::routes();
+});
+
+Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
+
 // Route::get('/restaurant_account', 'RestaurantController@show');
 
 Route::get('/restaurant_detail', 'RestaurantController@Restaurantdetail');
@@ -77,13 +84,6 @@ Route::post('/menu_list','MenuController@store');
 Route::get('/menu_list','MenuController@show');
 
 Route::get('/menus/{menu_id}/favorites','FavoriteController@store');
-
-
-Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function(){
-    Auth::routes();
-});
-
-Route::get('restaurant/home', 'RestaurantController@RestaurantAccount')->name('restaurant_home');
 
 Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
 
