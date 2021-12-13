@@ -71,6 +71,7 @@
                         </div>
                     </form>
                 </div>
+                <a href="restaurant/register ">お店の方はこちら</a>
             </div>
         </div>
     </div>
