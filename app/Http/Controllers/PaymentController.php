@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
-use Payjp\Charge;
+// use Payjp\Charge;
+// use Payjp\Customer;
 
 class PaymentController extends Controller
 {
@@ -83,12 +85,13 @@ class PaymentController extends Controller
            $user->payjp_customer_id = $customer->id;
            $user->save();
         }
-    
+        $totalprice = $request->input('totalprice');
+        // dd($totalprice);
         // ⭐️ 支払い処理
         // 新規支払い情報作成
         \Payjp\Charge::create([
              "customer" => $customer->id,
-             "amount" => 1000,
+             "amount" => $totalprice,
              "currency" => 'jpy',
         ]);
     
@@ -96,10 +99,11 @@ class PaymentController extends Controller
     
         return redirect('/payment_finish')->with('message', '支払いが完了しました');
 
-        // $order = new Order();
-        // $order-> menu_quantity= $request->menu_quantiy;
-        // // dd($request);
-        // $order->save();
+        // dd($request);
+        $order = new Order();
+        $order-> menu_id= $request->menuprice;
+        $order-> user_id = Auth::user()->id;
+        $order->save();
     
       } catch (\Exception $e) {
         Log::error($e);
@@ -114,6 +118,7 @@ class PaymentController extends Controller
     }
     public function finish()
     {
-      return view('payment_finish');
+      $users = Auth::user()->name;
+      return view('payment_finish',compact('users'));
     }
 }

@@ -2,12 +2,12 @@ h1{
    text-align: center;
 }
 .order-detail{
-   padding-top: 150px;
+   padding-top: 50px;
    text-align: center;
 }
 
 .order-menu{
-   padding-bottom: 40px;
+   padding-top: 40px;
 }
 .quantity{
    padding-bottom: 40px;
@@ -16,4 +16,11 @@ h1{
 .btn{
    padding-top: 50px;
    text-align: center;
+}
+main{
+   height: 1000px;
+}
+img{
+   width: 400px;
+   height: 300px;
 }

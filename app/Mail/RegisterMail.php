@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Auth;
 
-class SendMail extends Mailable
+class RegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +32,7 @@ class SendMail extends Mailable
         $users = Auth::user()->name;
         return $this
         ->from('example@example.com')
-        ->subject('テストメール')
-        ->view('emails.test',compact('users'));
+        ->subject('登録完了')
+        ->view('emails.register',compact('users'));
     }
 }

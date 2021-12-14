@@ -48,7 +48,10 @@
   @if (!empty($cardList))
     <p>もしくは登録済みのカードで支払い</p>
     <form action="/payment_check" method="post">
-      @csrf    
+      @csrf
+      <input type="hidden" name="totalprice" value="{{$totalprice}}">
+      <input type="hidden" name="menufood" value="{{$menufood}}">
+      <input type="hidden" name="menuprice" value="{{$menuprice}}">
         @foreach ($cardList as $card)
           <div class="card-item">
             <label>
