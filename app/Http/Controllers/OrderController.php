@@ -13,16 +13,21 @@ class OrderController extends Controller
     //
     public function DetailPage()
     {
-        return view('detail');
+        // $users = Auth::user()->name;
+        // dd($users);
+        return view('detail',compact('users'));
     }
     public function store(Request $request)
     {
         // dd($request);
         // $menufood = $request->menufood;
         // $menuprice = $request->menuprice;
+        $users = Auth::user()->name;
         $menufood = $request->input('menufood');
         $menuprice = $request->input('menuprice');
-        return view('detail',compact('menufood','menuprice'));
+        $menuimage = $request->input('menuimage');
+        $restaurantname = $request->input('restaurantname');
+        return view('detail',compact('menufood','menuprice','menuimage','restaurantname','users'));
     }
 
     public function ordershow(Request $request)

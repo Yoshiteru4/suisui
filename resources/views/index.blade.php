@@ -44,7 +44,7 @@
         <input type="text" class="form" size="35" placeholder="検索したい料理名を入力してください" name="food">
       </div>
       <div class="form-group2">
-        <label>金額：</label>
+        <label>金額　：</label>
         <input type="text" class="form" size="35" placeholder="最低金額を入力してください" name="price" value="{{ old("name")}}">
       </div>
       <div class="btn1">
@@ -72,7 +72,15 @@
           <h4>料理名：{{$menu->food}}</h4>
           <h4>値段：¥{{$menu->price}}</h4>
           <h4>店舗名：{{ $menu->restaurant->name }}</h4>
+
+      <form action="/detail"  method="post">
+        @csrf
+        <input type="hidden" name="menufood" value="{{$menu->food}}">
+         <input type="hidden" name="menuprice" value="{{$menu->price}}">
+         <input type="hidden" name="menuimage" value="{{$menu->image_path}}">
+         <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">
           <input type="submit" value="注文する">
+      </form>
       </div>
     @endforeach
     @endif

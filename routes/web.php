@@ -30,6 +30,8 @@ Route::post('/detail','OrderController@store');
 
 Route::get('/mail','TestMailController@send');
 
+Route::get('/register','RegisterMailController@send');
+
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
 Route::get('/restaurant_list','RestaurantController@RestaurantShowPage')->name('restaurant_list');
