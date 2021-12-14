@@ -13,7 +13,7 @@
 <body>
     <header>
       <h1 class="top">検索ページ</h1>
-          @if (Route::has('login'))
+          {{-- @if (Route::has('login'))
               <div class="login">
                   @auth
                   <form action="/logout" method="post">
@@ -27,7 +27,7 @@
                       @endif
                   @endauth
               </div>
-          @endif
+          @endif --}}
   </header>
 
   <main>
@@ -72,7 +72,7 @@
           <h4>料理名：{{$menu->food}}</h4>
           <h4>値段：¥{{$menu->price}}</h4>
           <h4>店舗名：{{ $menu->restaurant->name }}</h4>
-          <input type="submit" value="詳細を見る">
+          <input type="submit" value="注文する">
       </div>
     @endforeach
     @endif

@@ -13,7 +13,10 @@ class PaymentController extends Controller
     //
     public function index(Request $request)
     {
-        // dd($request->menuQuantity);
+        // dd($request);
+        $menufood = $request->menufood;
+        $menuprice = $request->menuprice;
+        $totalprice = $request->totalprice;
         $menuQuantity = $request->menuQuantity;
         $personQuantity = $request->personQuantity;
         $Comedate = $request->Comedate;
@@ -26,8 +29,7 @@ class PaymentController extends Controller
         // カード一覧を取得
         \Payjp\Payjp::setApiKey(config('payjp.secret_key'));
         // \Payjp\Payjp::setApiKey('sk_test_2dfaea8eabcbd8fec0fedc41');
-        $cardDatas = \Payjp\Customer::retrieve($user->payjp_customer_id)->cards->data;
-        // dd($cardDatas);  
+        $cardDatas = \Payjp\Customer::retrieve($user->payjp_customer_id)->cards->data; 
         foreach ($cardDatas as $cardData) {
           $cardList[] = [
             'id'=> $cardData->id,
@@ -37,9 +39,10 @@ class PaymentController extends Controller
             'exp_month' =>  $cardData->exp_month,
             'name' =>  $cardData->name,
           ];
+          // dd($cardList);
             }
         }
-            return view('payment', ['cardList'=> $cardList, 'menuQuantity'=>$menuQuantity, 'personQuantity'=>$personQuantity,'Comedate'=>$Comedate,'ComeTime'=>$ComeTime]);
+            return view('payment', ['cardList'=> $cardList,'menufood'=>$menufood,'menuprice'=>$menuprice,'totalprice'=>$totalprice,'menuQuantity'=>$menuQuantity, 'personQuantity'=>$personQuantity,'Comedate'=>$Comedate,'ComeTime'=>$ComeTime]);
     }
     public function payment(Request $request){
       if (empty($request->get('payjp-token')) && !$request->get('payjp_card_id')) {
