@@ -6,10 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('新規登録〜SuiSui Crew になろう！〜') }}</div>
+                <div class="card-header">{{ __('新規登録〜SuiSui Restaurant になろう！〜') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="post" action="{{ route('restaurant.register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -71,10 +71,8 @@
                         </div>
                     </form>
                 </div>
-                <a href="restaurant/register ">お店の方はこちら</a>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

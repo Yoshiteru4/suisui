@@ -9,6 +9,7 @@ use App\Menu;
 
 class OrderController extends Controller
 {
+
     //
     public function DetailPage()
     {
@@ -35,6 +36,5 @@ class OrderController extends Controller
       $totalprice = $menuprice * $menuQuantity;
       return view('payment',compact('menufood','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice'));
     }
-
 }
 
