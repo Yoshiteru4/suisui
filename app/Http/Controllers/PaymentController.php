@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
 // use Payjp\Charge;
-// use Payjp\Customer;
+// use \Payjp\Customer;
 
 class PaymentController extends Controller
 {
@@ -16,6 +16,7 @@ class PaymentController extends Controller
     public function index(Request $request)
     {
         // dd($request);
+        $menuid = $request->menuid;
         $menufood = $request->menufood;
         $menuprice = $request->menuprice;
         $totalprice = $request->totalprice;
@@ -23,15 +24,16 @@ class PaymentController extends Controller
         $personQuantity = $request->personQuantity;
         $Comedate = $request->Comedate;
         $ComeTime = $request->ComeTime;
-        $user = auth()->user();
-        
+        $user = Auth::user();
+        // dd($request);
         $cardList = [];
     // 既にpayjpに登録済みの場合
       if (!empty($user->payjp_customer_id)) {
         // カード一覧を取得
         \Payjp\Payjp::setApiKey(config('payjp.secret_key'));
-        // \Payjp\Payjp::setApiKey('sk_test_2dfaea8eabcbd8fec0fedc41');
+        // \Payjp\Payjp::setApiKey(config('services.payjp.secret_key'));
         $cardDatas = \Payjp\Customer::retrieve($user->payjp_customer_id)->cards->data; 
+        // dd($cardDatas);
         foreach ($cardDatas as $cardData) {
           $cardList[] = [
             'id'=> $cardData->id,
@@ -41,23 +43,48 @@ class PaymentController extends Controller
             'exp_month' =>  $cardData->exp_month,
             'name' =>  $cardData->name,
           ];
-          // dd($cardList);
-            }
+          // dd($cardDatas);
+          }
         }
-            return view('payment', ['cardList'=> $cardList,'menufood'=>$menufood,'menuprice'=>$menuprice,'totalprice'=>$totalprice,'menuQuantity'=>$menuQuantity, 'personQuantity'=>$personQuantity,'Comedate'=>$Comedate,'ComeTime'=>$ComeTime]);
+            return view('payment', ['cardList'=> $cardList,'menuid'=>$menuid,'menufood'=>$menufood,'menuprice'=>$menuprice,'totalprice'=>$totalprice,'menuQuantity'=>$menuQuantity, 'personQuantity'=>$personQuantity,'Comedate'=>$Comedate,'ComeTime'=>$ComeTime]);
     }
     public function payment(Request $request){
+      // dd($request);
       if (empty($request->get('payjp-token')) && !$request->get('payjp_card_id')) {
         abort(404);
       }
+      // dd($request);
     
       DB::beginTransaction();
-    
       try {
         // ログインユーザー取得
-        $user = auth()->user();
+        $user = Auth::user();
+        
         // シークレットキーを設定
         \Payjp\Payjp::setApiKey(config('payjp.secret_key'));
+
+        // ⭐️ 顧客情報登録
+        $customer = \Payjp\Customer::create([
+        // カード情報も合わせて登録する
+        'card' => $request->get('payjp-token'),
+        // 概要
+        'description' => "userId: {$user->id}, userName: {$user->name}",
+        ]);
+        // dd($customer);
+        // DBにcustomer_idを登録
+        $user->payjp_customer_id = $customer->id;
+        $user->save();
+        // dd($user);
+
+        $totalprice = $request->input('totalprice');
+
+        // ⭐️ 支払い処理
+        // 新規支払い情報作成
+        \Payjp\Charge::create([
+          "customer" => $customer->id,
+          "amount" => $totalprice,
+          "currency" => 'jpy',
+     ]);
     
         // ⭐️ 以前使用したカードを使う場合
         if (!empty($request->get('payjp_card_id'))) {
@@ -81,29 +108,27 @@ class PaymentController extends Controller
            $customer = \Payjp\Customer::create([
               'card' => $request->get('payjp-token'),
            ]);
+           $user = Auth::user();
            // DBにcustomer_idを登録
            $user->payjp_customer_id = $customer->id;
+          //  $user->payjp_customer_id = $request->payjp_card_id;
            $user->save();
         }
-        $totalprice = $request->input('totalprice');
-        // dd($totalprice);
-        // ⭐️ 支払い処理
-        // 新規支払い情報作成
-        \Payjp\Charge::create([
-             "customer" => $customer->id,
-             "amount" => $totalprice,
-             "currency" => 'jpy',
-        ]);
-    
+
          DB::commit();
     
         return redirect('/payment_finish')->with('message', '支払いが完了しました');
 
         // dd($request);
-        $order = new Order();
-        $order-> menu_id= $request->menuprice;
-        $order-> user_id = Auth::user()->id;
-        $order->save();
+        $orders = new Order();
+        $orders-> menu_id= $request->menuid;
+        $orders-> user_id = Auth::user()->id;
+        $orders->totalprice = $request->totalprice;
+        $orders->menu_amount = $request->menuQuantity;
+        $orders->person_amount = $request->personQuantity;
+        $orders->come_date = $request->Comedate;
+        $orders->come_time = $request->ComeTime;
+        $orders->save();
     
       } catch (\Exception $e) {
         Log::error($e);

@@ -8,6 +8,8 @@
 
 @section('content')
 
+<h1 class="index">メニュー一覧</h1>
+
 <div class="menubox">
    @foreach($menus as $menu)
          <div class="menu">
@@ -19,12 +21,14 @@
             <p>金額：{{ $menu->price }}円</p>
       <form action="/detail"  method="post">
          @csrf
+
+         <input type="hidden" name="menuid" value="{{$menu->id}}">
          <input type="hidden" name="menufood" value="{{$menu->food}}">
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">         
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">         
 
-         <input type="submit" value="注文する">
+         <input type="submit"  class="order-btn" value="注文する">
       </form>
             
             <div style="padding:10px 40px">
@@ -34,6 +38,7 @@
                <a href="/menus/{{ $menu->id}}/favorites"><i class="far fa-heart fa-2x hurt"></i></a>
                @endif
             </div>
+            {{-- {{ $menu->favorites->count() }} --}}
 
          </div>
    @endforeach

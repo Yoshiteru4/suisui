@@ -30,7 +30,7 @@ Route::post('/detail','OrderController@store');
 
 Route::get('/mail','TestMailController@send');
 
-Route::get('/register','RegisterMailController@send');
+Route::get('/registermail','RegisterMailController@send');
 
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
@@ -96,4 +96,6 @@ Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
 Route::get('/favorite','FavoriteController@index');
 
 Route::get('/welcome','WelcomeController@show');
+
+
 

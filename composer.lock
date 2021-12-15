@@ -4846,6 +4846,7 @@
         },
         {
             "name": "symfony/translation",
+
             "version": "v5.4.1",
             "source": {
                 "type": "git",
@@ -4856,6 +4857,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
                 "reference": "8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
+
                 "shasum": ""
             },
             "require": {
@@ -4922,6 +4924,7 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7813,7 +7816,9 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
+
         "php": "^7.3.24"
+
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
