@@ -28,6 +28,7 @@
                 @endif
         </header>
         <main>
+            <div class="snow">●</div> 
             <h1 class="homes"><i class="fas fa-home homemark"></i>ホーム</h1>
             <div class="menubox">
                 @foreach($menus as $menu)
