@@ -18,6 +18,9 @@
             <p>{{ $menu->food }}</p>
             {{-- <p>{{ $menu->price }}</p> --}}
             @endforeach
+
+            <a href="/create">メニューを作成する</a>
+            <a href="/restaurant_edit">メニューを編集する</a>
             
             
         </div>

@@ -28,10 +28,6 @@
             <input type="text" name="name" value="{{ $user->name }}">
             <h3>メールアドレス</h3>
             <input type="email" name="email" value="{{ $user->email }}">
-            {{-- <h3>電話番号</h3> --}}
-            {{-- <input type="tel" name="" id="" value=""> --}}
-            {{-- <h4>パスワード</h4> --}}
-            {{-- <input type="text" name="password'" value="{{ $user->password }}"> --}}
             <input type="submit" value="完了" class="btn">
          </div>
       </form>
