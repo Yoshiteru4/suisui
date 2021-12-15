@@ -14,7 +14,11 @@
             <p>メールアドレス：{{ $Restaurant->email }}</p>
             
             <h2>＜掲載メニュー＞</h2>
-            <p>{{ $Restaurant->menu->food}}</p>
+            @foreach($Restaurant->menus as $menu)
+            <p>{{ $menu->food }}</p>
+            {{-- <p>{{ $menu->price }}</p> --}}
+            @endforeach
+            
             
         </div>
     </main>
