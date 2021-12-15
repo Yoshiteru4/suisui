@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Order;
 use Illuminate\Support\Facades\Auth;
+use App\Menu;
 
 
 
@@ -61,7 +62,13 @@ class RestaurantController extends Controller
     public function Restaurantdetail()
     {
         $Restaurant = Auth::user();
+        // dd($Restaurant);
         return view('restaurant.restaurant_detail', ['Restaurant'=>$Restaurant]);
     }
 
+    public function show()
+    {
+        $menus = Menu::all();
+        return view('/welcome', ['menus'=>$menus]);
+    }
 }
