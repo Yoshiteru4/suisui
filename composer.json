@@ -8,11 +8,11 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3.31",
+        "php": "^8.0.12",
         "barryvdh/laravel-debugbar": "^3.6",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.4",
+        "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
         "jrm2k6/cloudder": "^0.7.0",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
@@ -51,6 +51,17 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
-
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
 }
