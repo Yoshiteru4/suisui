@@ -28,9 +28,10 @@ Route::get('/detail','OrderController@DetailPage');
 
 Route::post('/detail','OrderController@store');
 
-Route::get('/mail','TestMailController@send');
+// Route::get('/mail','TestMailController@send');
 
 Route::get('/registermail','RegisterMailController@send');
+
 
 Route::get('/payment_finish','PaymentController@PaymentLastPage');
 
