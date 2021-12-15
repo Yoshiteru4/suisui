@@ -50,7 +50,7 @@ class Restaurant extends Authenticatable
 
     public function menus()
     {
-        return $this->hasmany('App\Menu');
+        return $this->hasMany('App\Menu');
     }
 
     

@@ -21,4 +21,9 @@ class Menu extends Model
     {
         return Favorite::where('user_id', $user->id)->where('menu_id', $this->id);
     }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

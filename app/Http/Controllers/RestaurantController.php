@@ -37,12 +37,6 @@ class RestaurantController extends Controller
         return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
     }
 
-    // public function show()
-    // {
-    //     $orderlists = Order::all();
-    //     return view('restaurant_account', ['orderlists'=>$orderlists]);
-    // }
-
     public function __construct()
     {
         $this->middleware('auth:restaurant');
