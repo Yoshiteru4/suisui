@@ -8,7 +8,7 @@
 
 @section('content')
 <main>
-<h1>＜詳細選択＞</h1>
+<h1>＜{{$users}}様の詳細選択＞</h1>
 
 
 <form action="/payments" method="post">
@@ -16,9 +16,11 @@
 <div class="order-detail">
     <div class="image"><img src="{{$menuimage}}" alt=""></div>
 <div class="order-menu">
-<h4>{{$users}}様が選んだメニューの店舗名:{{$restaurantname}}</h4><br>
-<h2>{{$users}}様が選んだメニュー: {{$menufood}}</h2><br>
-<span>{{$users}}様が選んだメニューの金額: ¥{{$menuprice}}</span><span><br>
+<h4>選んだメニューの店舗名:{{$restaurantname}}</h4><br>
+<h4>選んだメニュー: {{$menufood}}</h4><br>
+<span>選んだメニューの金額: ¥{{$menuprice}}</span><span><br>
+<input type="hidden" name="menuid" value="{{$menuid}}">
+<input type="hidden" name="restaurantname" value="{{$restaurantname}}">
 <input type="hidden" name="menufood" value="{{$menufood}}">
 <input type="hidden" name="menuprice" value="{{$menuprice}}">
 
@@ -41,8 +43,8 @@
 
 
 <div class="btn">
-<p><button type="button" onClick="history.back()" class="button">戻る</button>
-<input type="submit" value="次に進む"></p>
+<p><button type="button" onClick="history.back()" class="back-btn">戻る</button>
+<input type="submit" class="next-btn" value="次に進む"></p>
 </div>
 </form>
 </main>
