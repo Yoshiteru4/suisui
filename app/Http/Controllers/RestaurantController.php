@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Order;
+use Illuminate\Support\Facades\Auth;
+use App\Menu;
+
+
 
 class RestaurantController extends Controller
 {
@@ -49,10 +53,22 @@ class RestaurantController extends Controller
         return view('restaurant.restaurant_account');
     }
     
+    // public function Restaurantdetail()
+    // {
+    //     $Restaurantdetails = Restaurant::where('id',1)->get();
+    //     return view('restaurant.restaurant_detail', ['Restaurantdetails'=>$Restaurantdetails]);
+    // }
+
     public function Restaurantdetail()
     {
-        $Restaurantdetails = Restaurant::all();
-        return view('restaurant.restaurant_detail', ['Restaurantdetails'=>$Restaurantdetails]);
+        $Restaurant = Auth::user();
+        // dd($Restaurant);
+        return view('restaurant.restaurant_detail', ['Restaurant'=>$Restaurant]);
     }
 
+    public function show()
+    {
+        $menus = Menu::all();
+        return view('/restaurant_detail', ['menus'=>$menus]);
+    }
 }

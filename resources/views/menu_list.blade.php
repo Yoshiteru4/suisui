@@ -8,6 +8,8 @@
 
 @section('content')
 
+<h1 class="index">メニュー一覧</h1>
+
 <div class="menubox">
    @foreach($menus as $menu)
          <div class="menu">
@@ -36,6 +38,7 @@
                <a href="/menus/{{ $menu->id}}/favorites"><i class="far fa-heart fa-2x hurt"></i></a>
                @endif
             </div>
+            {{-- {{ $menu->favorites->count() }} --}}
 
          </div>
    @endforeach
