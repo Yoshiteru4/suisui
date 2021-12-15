@@ -92,14 +92,14 @@ header{
    font-size: 20px;
    margin-top: 25px;
 }
-.homes{
+/* .homes{
    margin-top: 40px;
    text-align: center;
 }
 .homemark{
    
    color: #FD9940;
-}
+} */
 .menu{
    display: flex;
    flex-direction: column;
@@ -107,6 +107,7 @@ header{
    margin: 1rem 10px 0 10px;
 }
 .menubox{
+   margin-top: 50px;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
