@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
+    "content-hash": "0ddb5dde152ead37fdec917e41181dbd",
+
     "content-hash": "69dded19104506a74205ca84cbed9a01",
+
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4861,6 +4865,17 @@
         },
         {
             "name": "symfony/translation",
+
+            "version": "v5.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "8c82cd35ed861236138d5ae1c78c0c7ebcd62107"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
+                "reference": "8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
             "version": "v6.0.1",
             "source": {
                 "type": "git",
@@ -4871,6 +4886,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/b7956e00c6e03546f2ba489fc50f7c47933e76b8",
                 "reference": "b7956e00c6e03546f2ba489fc50f7c47933e76b8",
+>
                 "shasum": ""
             },
             "require": {
@@ -4936,7 +4952,10 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
+                "source": "https://github.com/symfony/translation/tree/v5.4.1"
+
                 "source": "https://github.com/symfony/translation/tree/v6.0.1"
+
             },
             "funding": [
                 {
@@ -4952,7 +4971,11 @@
                     "type": "tidelift"
                 }
             ],
+
+            "time": "2021-12-05T20:33:52+00:00"
+
             "time": "2021-12-08T15:13:44+00:00"
+
         },
         {
             "name": "symfony/translation-contracts",
@@ -7836,7 +7859,11 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
+
+        "php": "^7.3.29"
+
         "php": "^8.0.12"
+
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

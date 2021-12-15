@@ -23,23 +23,26 @@ class OrderController extends Controller
         // $menufood = $request->menufood;
         // $menuprice = $request->menuprice;
         $users = Auth::user()->name;
+        $menuid = $request->input('menuid');
         $menufood = $request->input('menufood');
         $menuprice = $request->input('menuprice');
         $menuimage = $request->input('menuimage');
         $restaurantname = $request->input('restaurantname');
-        return view('detail',compact('menufood','menuprice','menuimage','restaurantname','users'));
+        return view('detail',compact('menuid','menufood','menuprice','menuimage','restaurantname','users'));
     }
 
     public function ordershow(Request $request)
     {
+      $menuid = $request->input('menuid');
       $menufood = $request->input('menufood');
+      $restaurantname = $request->input('restaurantname');
       $menuprice = $request->input('menuprice');
       $menuQuantity = $request->input('menuQuantity');
       $personQuantity = $request->input('personQuantity');
       $Comedate = $request->input('Comedate');
       $ComeTime = $request->input('ComeTime');
       $totalprice = $menuprice * $menuQuantity;
-      return view('payment',compact('menufood','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice'));
+      return view('payment',compact('menuid','menufood','restaurantname','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice'));
     }
 }
 

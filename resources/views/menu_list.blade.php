@@ -21,12 +21,14 @@
             <p>金額：{{ $menu->price }}円</p>
       <form action="/detail"  method="post">
          @csrf
+
+         <input type="hidden" name="menuid" value="{{$menu->id}}">
          <input type="hidden" name="menufood" value="{{$menu->food}}">
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">         
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">         
 
-         <input type="submit" value="注文する">
+         <input type="submit"  class="order-btn" value="注文する">
       </form>
             
             <div style="padding:10px 40px">
