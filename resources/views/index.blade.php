@@ -79,7 +79,7 @@
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">
-          <input type="submit" value="注文する">
+          <input type="submit" value="注文する" class="order-btn">
       </form>
       </div>
     @endforeach

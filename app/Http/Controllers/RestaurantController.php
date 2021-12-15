@@ -63,6 +63,6 @@ class RestaurantController extends Controller
     public function show()
     {
         $menus = Menu::all();
-        return view('/welcome', ['menus'=>$menus]);
+        return view('/restaurant_detail', ['menus'=>$menus]);
     }
 }

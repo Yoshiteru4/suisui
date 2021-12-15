@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -21,4 +22,5 @@ class Order extends Model
         return $this->belongsTo('App\Menu');
     }
     
+
 }
