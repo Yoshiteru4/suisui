@@ -33,6 +33,7 @@ class OrderController extends Controller
 
     public function ordershow(Request $request)
     {
+        // dd($request);
       $menuid = $request->input('menuid');
       $menufood = $request->input('menufood');
       $restaurantname = $request->input('restaurantname');

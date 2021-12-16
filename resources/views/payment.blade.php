@@ -5,7 +5,7 @@
 
 <h1 class="check">＜注文詳細確認＞</h1>
 
-{{-- <form action="payment_finish.blade.php" method="post"> --}}
+<form action="/order_finish" method="post">
     <div class="order-check">
         <span>選んだメニュー{{$menufood}}</span><span>{{$menuQuantity}}個</span><br>       
             <span>人数</span><span>{{$personQuantity}}人</span><br>
@@ -16,8 +16,9 @@
     </div>
     <div class="btn">
       <button type="button" onClick="history.back()" class="button">戻る</button>
+      <input type="submit" value="注文確定" class="order-btn">
     </div>
-{{-- </form> --}}
+</form>
 
 
 <div class="payment-check">
