@@ -1,5 +1,5 @@
 @extends('layouts.restaurant')
-
+<link rel="stylesheet" href="{{ asset('css/restaurant.css') }}">
 @section('content')
 
 <main>

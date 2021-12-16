@@ -1,0 +1,28 @@
+h2{
+   margin-top: 30px;
+   text-align: center;
+}
+p{
+   margin-top: 10px;
+   text-align: center;
+}
+.createbox{
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+}
+body{
+   background-color: #f0f0f0	;
+}
+.create{
+   margin-top: 50px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.btn-btn-primary{
+   margin-left: 180px;
+   background-color: #FD9940;
+   border-color: #FD9940;
+}
