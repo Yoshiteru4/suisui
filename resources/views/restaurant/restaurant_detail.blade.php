@@ -15,13 +15,18 @@
             
             
             <h2>＜掲載メニュー＞</h2>
-            @foreach($Restaurant->menus as $menu)
-            <p>{{ $menu->food }}</p>
-            {{-- <p>{{ $menu->price }}</p> --}}
-            @endforeach
+            <div class="restaurant">
+                @foreach($Restaurant->menus as $menu)
+                <div class="restaurantbox">
+                    <p class="aiueo">{{ $menu->food }}</p>
+                    <img src="{{ $menu->image_path }}" alt="画像">
+                </div>
+                @endforeach
+            </div>
+                
             <div class="createbox">
-                <a class="fog" href="/create">メニューを作成する</a>
-                <a href="/restaurant_edit">メニューを編集する</a>
+                <a href="/create" class="btn btn-gradient"><span>メニューを作成する</span></a>
+                <a href="/restaurant_edit" class="btn btn-gradient"><span>メニューを編集する</span></a>
             </div>
             
             

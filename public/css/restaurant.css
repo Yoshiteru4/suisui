@@ -9,7 +9,8 @@ p{
 .createbox{
    display: flex;
    justify-content: center;
-   flex-direction: row;
+   align-items: center;
+   flex-direction: column;
 }
 body{
    background-color: #f0f0f0	;
@@ -25,4 +26,35 @@ body{
    margin-left: 180px;
    background-color: #FD9940;
    border-color: #FD9940;
+}
+a.btn-gradient {
+   margin-top: 5px;
+   color: #fff;
+   border: 2px solid #fff;
+   border-radius: 0;
+   background-image: -webkit-gradient(linear, left top, right top, from(#fa709a), to(#fee140));
+   background-image: -webkit-linear-gradient(left, #fa709a 0%, #fee140 100%);
+   background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, .1); 
+}
+a.btn-gradient:hover {
+   -webkit-transform: translate(0, -2px);
+   transform: translate(0, -2px);
+   color: #fff;
+   -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+   box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+}
+.restaurant{
+   margin-left: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+   overflow: scroll;
+}
+img{
+   height: 150px;
+   width: 200px;
 }

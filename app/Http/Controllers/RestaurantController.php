@@ -62,6 +62,7 @@ class RestaurantController extends Controller
 
     public function show()
     {
+        $Restaurant = Auth::user();
         $menus = Menu::all();
         return view('/restaurant_detail', ['menus'=>$menus]);
     }
