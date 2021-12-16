@@ -36,6 +36,7 @@
             <div class="favoritebox">
                <i class="fas fa-heart fa-2x hurt"></i>
                <h2><a href="/favorite" class="favorite">お気に入り一覧</a></h2>
+               
             </div>
             <div class="cardbox">
                <i class="fas fa-credit-card fa-2x card"></i>
