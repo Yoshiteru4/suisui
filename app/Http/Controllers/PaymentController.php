@@ -12,6 +12,21 @@ use App\Order;
 
 class PaymentController extends Controller
 {
+  public function order_finish(Request $request)
+  {
+    $orders = new Order();
+      $orders-> menu_id= $request->menuid;
+      $orders-> user_id = Auth::user()->id;
+      $orders->totalprice = $request->totalprice;
+      $orders->menu_amount = $request->menuQuantity;
+      $orders->person_amount = $request->personQuantity;
+      $orders->come_date = $request->Comedate;
+      $orders->come_time = $request->ComeTime;
+      // dd($orders);
+      $orders->save();
+      $users = Auth::user()->name;
+      return view('payment_finish',compact('users'));
+  }
     //
     public function index(Request $request)
     {
@@ -73,9 +88,9 @@ class PaymentController extends Controller
         // dd($customer);
         // DBにcustomer_idを登録
         $user->payjp_customer_id = $customer->id;
+        // dd($user);
         $user->save();
         // dd($user);
-
         $totalprice = $request->input('totalprice');
 
         // ⭐️ 支払い処理
@@ -130,7 +145,8 @@ class PaymentController extends Controller
         $orders->come_time = $request->ComeTime;
         $orders->save();
     
-      } catch (\Exception $e) {
+      } 
+      catch (\Exception $e) {
         Log::error($e);
         DB::rollback();
     
