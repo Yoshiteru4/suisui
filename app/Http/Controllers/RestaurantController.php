@@ -34,6 +34,7 @@ class RestaurantController extends Controller
     {
         $R_orderhistories = Order::all();
         // dd($R_orderhistories);
+        // $totalprice = $R_orderhistories->totalprice;
         return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
     }
 
