@@ -19,6 +19,7 @@
             <p>住所:{{ $menu->restaurant->address }}</p>
             <p>ランチタイム:{{ $menu->restaurant->lunchhour}}</p>
             <p>金額：{{ $menu->price }}円</p>
+            <p>{{$menu->id}}</p>
       <form action="/detail"  method="post">
          @csrf
 

@@ -68,3 +68,6 @@
    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
    border        : 2px solid #FD9940;    /* 枠の指定 */
 }
+.message{
+    text-align: center;
+}
