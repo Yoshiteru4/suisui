@@ -25,7 +25,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $menus = new Menu();
-        $menus->restaurant_id=1;
+        $menus->restaurant_id=$request->restaurant_id;
         $menus->food = $request->food;
         $menus->price = $request->price;
         if ($image = $request->file('image')) {
