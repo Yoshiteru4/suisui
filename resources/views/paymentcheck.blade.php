@@ -12,7 +12,7 @@
 <div class="message">
 {{-- <h1>{{$user}}様</h1> --}}
 <h2>ご注文ありがとうございます！下記のクレジットカードより事前決済にお進みください！</h2>
-{{-- <h3>{{$users}}様の注文金額：¥{{$totalprice}}</h3> --}}
+<h3>{{$users}}様の注文金額：¥{{$totalprice}}</h3>
 </div>
 
 <h2>4242424242424242</h2>
@@ -24,6 +24,7 @@
 
     <form action="payment_check" method="post">
         @csrf
+        <input type="hidden" name="totalprice" value="{{$totalprice}}">
         <script
           src="https://checkout.pay.jp/"
           class="payjp-button"
@@ -42,6 +43,7 @@
             @foreach ($cardList as $card)
               <div class="card-item">
                 <label>
+                  <input type="hidden" name="totalprice" value="{{$totalprice}}">
                   <input type="radio" name="payjp_card_id" value="{{ $card['id'] }}" />
                   <span class="brand">{{ $card['brand'] }}</span>
                   <span class="number">{{ $card['cardNumber'] }}</span>

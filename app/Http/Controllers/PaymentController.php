@@ -49,7 +49,7 @@ class PaymentController extends Controller
       DB::beginTransaction();
       try {
         // ログインユーザー取得
-        $user = Auth::user();
+        $user = auth()->user();
         
         // シークレットキーを設定
         \Payjp\Payjp::setApiKey(config('payjp.secret_key'));
@@ -64,11 +64,11 @@ class PaymentController extends Controller
         // dd($customer);
         // DBにcustomer_idを登録
         $user->payjp_customer_id = $customer->id;
-        dd($user);
+        // dd($user);
         $user->save();
         // dd($user);
-        $totalprice = $request->input('totalprice');
-
+        $totalprice = $request->totalprice;
+        // dd($totalprice);
         // ⭐️ 支払い処理
         // 新規支払い情報作成
         \Payjp\Charge::create([
@@ -77,34 +77,7 @@ class PaymentController extends Controller
           "currency" => 'jpy',
      ]);
     
-        // ⭐️ 以前使用したカードを使う場合
-        if (!empty($request->get('payjp_card_id'))) {
-          $customer = \Payjp\Customer::retrieve($user['payjp_customer_id']);
-          // 使用するカードを設定
-          $customer->default_card = $request->get('payjp_card_id');
-          $customer->save();
-        // ⭐️ 既にpayjpに登録済みの場合
-        } elseif (!empty($user['payjp_customer_id'])) {
-          // カード情報を追加
-          $customer = \Payjp\Customer::retrieve($user['payjp_customer_id']);
-          $card = $customer->cards->create([
-            'card' => $request->get('payjp-token'),
-          ]);
-           // 使用するカードを設定
-           $customer->default_card = $card->id;
-           $customer->save();
-        // ⭐️ payjp未登録の場合
-        } else {
-           // payjpで顧客新規登録 & カード登録
-           $customer = \Payjp\Customer::create([
-              'card' => $request->get('payjp-token'),
-           ]);
-           $user = Auth::user();
-           // DBにcustomer_idを登録
-           $user->payjp_customer_id = $customer->id;
-          //  $user->payjp_customer_id = $request->payjp_card_id;
-           $user->save();
-        }
+       
 
          DB::commit();
     
