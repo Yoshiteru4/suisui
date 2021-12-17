@@ -45,6 +45,6 @@ class MenuController extends Controller
     public function show()
     {
       $menus = Menu::all();
-      return view('/menu_list', ['menus'=>$menus]);
+      return view('menu_list', ['menus'=>$menus]);
     }
 }

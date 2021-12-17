@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/menu_list','MenuController@MenuPage');
 
@@ -96,9 +95,11 @@ Route::get('/favorites/{favorite_id}','FavoriteController@destroy');
 
 Route::get('/favorite','FavoriteController@index');
 
-Route::get('/welcome','WelcomeController@show');
+Route::get('/','WelcomeController@show');
 
 Route::post('/order_finish','PaymentController@order_finish');
 
 
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });

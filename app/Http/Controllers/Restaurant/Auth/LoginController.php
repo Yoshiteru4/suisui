@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/restaurant_account';
+    protected $redirectTo = '/restaurant/home';
 
     /**
      * Create a new controller instance.
@@ -37,4 +37,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+{
+    return view('restaurant.auth.login');
+}
+
+// protected function guard(){
+//     return Auth::guard('restaurant');
+// }
+
 }

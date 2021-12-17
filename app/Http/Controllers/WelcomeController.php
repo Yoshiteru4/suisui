@@ -19,6 +19,7 @@ class WelcomeController extends Controller
     public function show()
     {
         $menus = Menu::all();
-        return view('/welcome', ['menus'=>$menus]);
+        // dd($menus);
+        return view('welcome', ['menus'=>$menus]);
     }
 }
