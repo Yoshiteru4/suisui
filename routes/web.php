@@ -98,7 +98,4 @@ Route::get('/favorite','FavoriteController@index');
 
 Route::get('/welcome','WelcomeController@show');
 
-Route::post('/order_finish','PaymentController@order_finish');
-
-
-
+Route::post('/order_finish','OrderController@order_finish');

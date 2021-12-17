@@ -45,5 +45,21 @@ class OrderController extends Controller
       $totalprice = $menuprice * $menuQuantity;
       return view('payment',compact('menuid','menufood','restaurantname','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice'));
     }
+    public function order_finish(Request $request)
+  {
+    $orders = new Order();
+      $orders-> menu_id= $request->menuid;
+      $orders-> user_id = Auth::user()->id;
+      $orders->totalprice = $request->totalprice;
+      $orders->menu_amount = $request->menuQuantity;
+      $orders->person_amount = $request->personQuantity;
+      $orders->come_date = $request->Comedate;
+      $orders->come_time = $request->ComeTime;
+      // dd($orders);
+      $orders->save();
+      $users = Auth::user()->name;
+      $totalprice = $request->totalprice;
+      return view('paymentcheck',compact('users','totalprice'));
+  }
 }
 
