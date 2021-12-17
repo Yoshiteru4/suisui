@@ -103,3 +103,6 @@ Route::post('/order_finish','PaymentController@order_finish');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::post('/order_finish','OrderController@order_finish');
+
