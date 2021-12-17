@@ -34,9 +34,9 @@
                 <div class="menu">
                     <img src="{{ $menu->image_path }}" alt="画像">
                     <p>商品名：{{ $menu->food }}</p>
-                    <p>店舗名：{{ $menu->restaurant->name }}</p>
+                    {{-- <p>店舗名：{{ $menu->restaurant->name }}</p>
                     <p>住所:{{ $menu->restaurant->address }}</p>
-                    <p>営業時間:{{ $menu->restaurant->lunchhour}}</p>
+                    <p>営業時間:{{ $menu->restaurant->lunchhour}}</p> --}}
                     <p>金額：{{ $menu->price }}円</p>
                     </div>
                 @endforeach
