@@ -43,10 +43,10 @@ class RestaurantController extends Controller
         $this->middleware('auth:restaurant');
     }
 
-    public function restaurant_account()
-    {
-        return view('restaurant.restaurant_account');
-    }
+    // public function restaurant_account()
+    // {
+    //     return view('restaurant.restaurant_account');
+    // }
     
     // public function Restaurantdetail()
     // {

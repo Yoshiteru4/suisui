@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Restaurant\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -39,12 +40,12 @@ class LoginController extends Controller
     }
 
     public function showLoginForm()
-{
-    return view('restaurant.auth.login');
-}
+    {
+        return view('restaurant.auth.login');
+    }
 
-// protected function guard(){
-//     return Auth::guard('restaurant');
-// }
+    protected function guard(){
+        return Auth::guard('restaurant');
+    }
 
 }
