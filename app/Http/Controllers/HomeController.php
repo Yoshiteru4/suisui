@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('restaurant.restaurant_account');
+        return redirect('/restaurant_account');
     }
 }
