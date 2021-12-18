@@ -21,4 +21,7 @@
 </table>
 @endif
 </div>
+<form action="/detail"  method="post">
+  @csrf
+  <input type="hidden" name="menuid" value="{{$menu->id}}">
 @endsection

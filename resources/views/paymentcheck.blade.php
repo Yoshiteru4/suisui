@@ -11,11 +11,11 @@
 
 <div class="message">
 {{-- <h1>{{$user}}様</h1> --}}
-<h2>ご注文ありがとうございます！下記のクレジットカードより事前決済にお進みください！</h2>
+<h2>ご注文ありがとうございます！<br> 下記のクレジットカードより事前決済にお進みください！</h2>
 <h3>{{$users}}様の注文金額：¥{{$totalprice}}</h3>
 </div>
 
-<h2>4242424242424242</h2>
+<h2 class="test-code">テストコード：4242424242424242</h2>
 
 <div class="payment-check">
      @if (session('error-message'))
@@ -29,8 +29,8 @@
           src="https://checkout.pay.jp/"
           class="payjp-button"
           data-key="{{ config('services.payjp.public_key') }}"
-          data-text="カード情報を入力"
-          data-submit-text="カードを登録する"
+          data-text="カード情報を入力し、決済する"
+          data-submit-text="決済する"
          ></script>
         {{-- {{ dd(config('services.payjp.public_key')) }} --}}
     </form>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-      <h1 class="top">検索ページ</h1>
+      <h1 class="top">Suisui</h1>
           {{-- @if (Route::has('login'))
               <div class="login">
                   @auth
@@ -75,6 +75,8 @@
 
       <form action="/detail"  method="post">
         @csrf
+
+        <input type="hidden" name="menuid" value="{{$menu->id}}">
         <input type="hidden" name="menufood" value="{{$menu->food}}">
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">
