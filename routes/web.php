@@ -59,7 +59,7 @@ Route::get('/user', 'UserController@UserPage');
 Route::get('/welcome', 'WelcomeController@WelcomePage');
 
 // restaurantアカウント群
-Route::get('/restaurant_account', 'RestaurantController@restaurant_account');
+Route::get('/restaurant_account', 'RestaurantController@RestaurantAccount');
 
 Route::prefix('restaurant')->namespace('Restaurant')->name('restaurant.')->group(function()
 {
