@@ -17,15 +17,18 @@ class MenuController extends Controller
       $menus = Menu::all();
       return view('menu_list',['menus='=>$menus]);
     }
-    public function create()
+    public function create($id)
     {
-      return view('create');
+      $restaurant = Restaurant::find($id);
+      // dd($restaurant);
+      return view('create',['restaurant'=>$restaurant]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        $restaurant = Restaurant::find($id);
         $menus = new Menu();
-        $menus->restaurant_id=$request->restaurant_id;
+        $menus->restaurant_id=$restaurant->id;
         $menus->food = $request->food;
         $menus->price = $request->price;
         if ($image = $request->file('image')) {

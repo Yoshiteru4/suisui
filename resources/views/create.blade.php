@@ -8,7 +8,7 @@
 
    @section('content')
       <div class="create">
-         <form action="/menu_list" method="POST" enctype="multipart/form-data">
+         <form action="/menu_list/{{ $restaurant->id }}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}} 
             <div class="form-group">
                <label>・商品名:</label>

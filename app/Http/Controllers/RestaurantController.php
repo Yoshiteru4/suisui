@@ -58,7 +58,7 @@ class RestaurantController extends Controller
     {
         $Restaurant = Auth::user();
         // dd($Restaurant);
-        return view('restaurant.restaurant_detail', ['Restaurant'=>$Restaurant]);
+        return view('restaurant.restaurant_detail', ['Restaurant'=>$Restaurant,]);
     }
 
     public function show()

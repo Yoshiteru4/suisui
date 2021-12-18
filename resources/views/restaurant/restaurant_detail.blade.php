@@ -25,7 +25,7 @@
             </div>
                 
             <div class="createbox">
-                <a href="/create" class="btn btn-gradient"><span>メニューを作成する</span></a>
+                <a href="/create/{{ $Restaurant->id }}" class="btn btn-gradient"><span>メニューを作成する</span></a>
                 <a href="/restaurant_edit" class="btn btn-gradient"><span>メニューを編集する</span></a>
             </div>
             

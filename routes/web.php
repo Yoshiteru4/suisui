@@ -83,9 +83,9 @@ Route::get('/payment_finish', 'PaymentController@finish');
 
 Route::post('/payment_check','PaymentController@payment');
 
-Route::get('/create', 'MenuController@create');
+Route::get('/create/{id}', 'MenuController@create');
 
-Route::post('/menu_list','MenuController@store');
+Route::post('/menu_list/{id}','MenuController@store');
 
 Route::get('/menu_list','MenuController@show');
 
