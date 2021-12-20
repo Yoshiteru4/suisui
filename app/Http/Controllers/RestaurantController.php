@@ -8,6 +8,7 @@ use App\Restaurant;
 use App\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Menu;
+use Carbon\Carbon;
 
 
 
@@ -22,7 +23,9 @@ class RestaurantController extends Controller
 
     public function RestaurantAccount()
     {
-        return view('restaurant.restaurant_account');
+        $today = Carbon::today();
+        $today_orders = Order::whereDate('updated_at',$today)->get();
+        return view('restaurant.restaurant_account',['today_orders'=>$today_orders],);
     }
 
     public function RestaurantEdit()
@@ -32,7 +35,7 @@ class RestaurantController extends Controller
 
     public function index()
     {
-        $R_orderhistories = Order::all();
+        $R_orderhistories = Order::latest()->get();
         // dd($R_orderhistories);
         // $totalprice = $R_orderhistories->totalprice;
         return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
