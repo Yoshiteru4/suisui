@@ -39,7 +39,7 @@ a{
    }
 }
 header{
-   display: flex;
+   /* display: flex; */
    flex-direction: row;
    justify-content: end;
    align-items: center;
@@ -49,16 +49,34 @@ header{
    border-bottom: solid 5px #FD9940;
 }
 .login{
-   margin-left: 42%;
+   /* margin-left: 42%; */
    color: #FD9940;
-   display: flex;
-   flex-direction: column;
+   /* display: flex; */
+   /* flex-direction: column; */
 }
 .log{
    color: #FD9940;
+   font-weight: bold;
+   border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+   padding-left: 30px;
+   width: 300px;
+   font-size: 1.1rem;
+   padding: 16px 0;
+   border: 1px solid orange;
+   display: inline-block;
 }
 .sign{
    color: #FD9940;
+   font-weight: bold;
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+   padding-left: 30px;
+   width: 300px;
+   font-size: 1.1rem;
+   padding:16px 0;
+   border: 1px solid orange;
+   display: inline-block;
 }
 .underbar{
    color: #FD9940;
@@ -152,3 +170,40 @@ body{
       top: 150%;
    }
 }
+.title{
+   text-align: center;
+   padding-top: 150px;
+   font-size: 30px;
+   color: black;
+   font-weight: bold;
+}
+
+.kotira{
+   text-align: center;
+   padding-top: 30px;
+   font-size: 20px;
+}
+body{
+   background: url(../images/pexels-ella-olsson-1640774.jpg) no-repeat center;
+   background-size: cover;
+   position: relative;
+   z-index: 0;
+   overflow: hidden;
+}
+body:before{
+   content: '';
+   background: inherit;
+   -webkit-filter: blur(5px);
+   -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+   position: absolute;
+   top: -5px;
+   left: -5px;
+   right: -5px;
+   bottom: -200px;
+   z-index: -1;
+}
+
+
