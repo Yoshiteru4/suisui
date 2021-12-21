@@ -106,3 +106,6 @@ Route::post('/order_finish','PaymentController@order_finish');
 
 Route::post('/order_finish','OrderController@order_finish');
 
+Route::get('/restaurant/{id}/edit','RestaurantController@edit');
+
+Route::post('/restaurant_update','RestaurantController@update');
