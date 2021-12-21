@@ -30,7 +30,9 @@ class RestaurantController extends Controller
 
     public function RestaurantEdit()
     {
-        return view('restaurant.restaurant_edit');
+        $restaurants = Auth::user();
+        // dd($restaurants);
+        return view('restaurant.restaurant_edit',['restaurants'=>$restaurants]);
     }
 
     public function index()
@@ -69,5 +71,19 @@ class RestaurantController extends Controller
         $Restaurant = Auth::user();
         $menus = Menu::all();
         return view('/restaurant_detail', ['menus'=>$menus]);
+    }
+    public function edit($id)
+    {
+        $restaurants = Restaurant::find($id);
+        return view('restaurant.restaurant_edit2', ['restaurants'=>$restaurants]);
+    }
+    public function update(Request $request)
+    {
+        $restaurants = Restaurant::find($request->id);
+        $restaurants->name = $request->name;
+        $restaurants->email = $request->email;
+        $restaurants->update();
+        // dd($restaurants);
+        return redirect('/restaurant_edit');
     }
 }

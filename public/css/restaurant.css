@@ -61,3 +61,13 @@ img{
 main{
    height: 1000px;
 }
+.edit-btn{
+   text-align: center;
+}
+.input{
+   text-align: center;
+   padding-top: 100px;
+}
+.update-btn{
+   padding-top: 20px;
+}
