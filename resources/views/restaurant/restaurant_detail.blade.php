@@ -20,6 +20,7 @@
                 <div class="restaurantbox">
                     <p class="aiueo">{{ $menu->food }}</p>
                     <img src="{{ $menu->image_path }}" alt="画像">
+                    <p>¥{{$menu->price}}</p>
                 </div>
                 @endforeach
             </div>
