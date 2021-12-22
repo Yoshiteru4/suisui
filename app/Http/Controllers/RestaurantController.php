@@ -31,15 +31,14 @@ class RestaurantController extends Controller
     public function RestaurantEdit()
     {
         $restaurants = Auth::user();
-        // dd($restaurants);
-        return view('restaurant.restaurant_edit',['restaurants'=>$restaurants]);
+        $menus = Menu::all();
+        return view('restaurant.restaurant_edit',['restaurants'=>$restaurants],['menus'=>$menus]);
     }
 
     public function index()
     {
         $R_orderhistories = Order::latest()->get();
         // dd($R_orderhistories);
-        // $totalprice = $R_orderhistories->totalprice;
         return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
     }
 
@@ -84,6 +83,12 @@ class RestaurantController extends Controller
         $restaurants->email = $request->email;
         $restaurants->update();
         // dd($restaurants);
+        return redirect('/restaurant_edit');
+    }
+    public function delete(Request $request)
+    {
+        $menus = Menu::find($request->id);
+        $menus->delete();
         return redirect('/restaurant_edit');
     }
 }
