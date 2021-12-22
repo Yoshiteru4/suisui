@@ -23,6 +23,7 @@
 <input type="hidden" name="restaurantname" value="{{$restaurantname}}">
 <input type="hidden" name="menufood" value="{{$menufood}}">
 <input type="hidden" name="menuprice" value="{{$menuprice}}">
+<input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
 
   <p>メニューの個数：<select class="form" name="menuQuantity">
     <option value="1">1</option>

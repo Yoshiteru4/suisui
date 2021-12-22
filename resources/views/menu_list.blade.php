@@ -16,6 +16,7 @@
             <img src="{{ $menu->image_path }}" alt="画像">
             <p>商品名：{{ $menu->food }}</p>
             <p>店舗名：{{ $menu->restaurant->name }}</p>
+            <p>店舗ID：{{ $menu->restaurant->id }}</p>
             <p>住所:{{ $menu->restaurant->address }}</p>
             <p>ランチタイム:{{ $menu->restaurant->lunchhour}}</p>
             <p>金額：{{ $menu->price }}円</p>
@@ -28,6 +29,7 @@
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">         
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">         
+         <input type="hidden" name="restaurant_id" value="{{$menu->restaurant->id}}">         
 
          <input type="submit"  class="order-btn" value="注文する">
       </form>

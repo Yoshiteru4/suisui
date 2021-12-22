@@ -23,9 +23,10 @@ class RestaurantController extends Controller
 
     public function RestaurantAccount()
     {
+        $restaurants = Auth::user();
         $today = Carbon::today();
         $today_orders = Order::whereDate('updated_at',$today)->get();
-        return view('restaurant.restaurant_account',['today_orders'=>$today_orders],);
+        return view('restaurant.restaurant_account',['restaurants'=>$restaurants],['today_orders'=>$today_orders],);
     }
 
     public function RestaurantEdit()
