@@ -8,6 +8,7 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 # こだわったポイント
 
 - 決済機能
+-   ki
 
 
 # 苦労したこと
