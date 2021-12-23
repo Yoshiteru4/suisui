@@ -9,6 +9,6 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 
 # 苦労したこと
 
-#　今後の課題
+# 今後の課題
 
 
