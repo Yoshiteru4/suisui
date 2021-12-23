@@ -8,7 +8,7 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 # こだわったポイント
 
 - クレジットカード決済機能
--   この機能を取り入れた理由
+-   　この機能を取り入れた理由
 
 
 # 苦労したこと
