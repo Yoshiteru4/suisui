@@ -7,6 +7,9 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 
 # こだわったポイント
 
+-決済機能
+
+
 # 苦労したこと
 
 # 今後の課題
