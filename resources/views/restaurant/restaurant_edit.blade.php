@@ -17,8 +17,9 @@
  </div>
 
         <h2>＜掲載メニュー＞</h2>
-    <form action="/menu/{{$restaurants->id}}/delete" method="post">/
+    <form action="/menu/{{$restaurants->id}}/delete" method="post">
         @method('DELETE')
+        <div class="restaurant">
         @foreach ($restaurants->menus as $menu)
         @csrf
             <div class="restaurantbox">
