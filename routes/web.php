@@ -110,4 +110,4 @@ Route::get('/restaurant/{id}/edit','RestaurantController@edit');
 
 Route::post('/restaurant_update','RestaurantController@update');
 
-Route::delete('/menu/{id}/delete','RestaurantController@delete');
+Route::post('/menu/{id}/delete','RestaurantController@delete');
