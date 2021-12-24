@@ -87,9 +87,9 @@ class RestaurantController extends Controller
     }
     public function destroy(Request $request)
     {
-        dd($request);
+        // dd($request);
         $menus = Menu::find($request->id);
         $menus->delete();
-        return redirect('/restaurant_edit');
+        return redirect('/restaurant_detail');
     }
 }
