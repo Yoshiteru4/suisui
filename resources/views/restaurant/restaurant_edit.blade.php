@@ -17,20 +17,19 @@
  </div>
 
         <h2>＜掲載メニュー＞</h2>
-    <form action="/menu/{{$restaurants->id}}/delete" method="post">
-    <div class="restaurant">
+    <form action="/menu/{{$restaurants->id}}/delete" method="post">/
+        @method('DELETE')
         @foreach ($restaurants->menus as $menu)
         @csrf
-        @method('DELETE')
-        <div class="restaurantbox">
-        <p class="aiueo">{{$menu->food}}</p>
-        <img src="{{ $menu->image_path }}" alt="画像">
-        <p>¥{{$menu->price}}</p>
-        <input type="submit" value="削除する" class="delete-btn">
-        {{-- <input type="submit" value="編集する"> --}}
+            <div class="restaurantbox">
+            <p class="aiueo">{{$menu->food}}</p>
+            <img src="{{ $menu->image_path }}" alt="画像">
+            <p>¥{{$menu->price}}</p>
+            <input type="hidden" name="id" value="{{ $menu->id }}">  
+            <input type="submit" value="削除する">
         </div>
         @endforeach
-    </div>
     </form>
+    </div>
 </main>
 @endsection
