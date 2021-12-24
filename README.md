@@ -16,5 +16,5 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 # 苦労したこと
 
 # 今後の課題
-
+- 企画・要件定義、設計などの上流工程の段階に時間を費やすこと。　〜
 
