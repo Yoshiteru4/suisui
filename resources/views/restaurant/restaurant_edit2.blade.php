@@ -13,7 +13,7 @@
        <h3>メールアドレス</h3>
        <input type="email" name="email" value="{{ $restaurants->email }}">
        <div class="update-btn">
-       <input type="submit" value="完了" class="btn">
+       <input type="submit" value="完了" class="update-btn2">
       </div>
     </div>
  </form>

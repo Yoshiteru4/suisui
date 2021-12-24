@@ -14,6 +14,7 @@
        <p>選んだメニュー{{$menufood}}{{$menuQuantity}}個</p>   
        <p>人数{{$personQuantity}}人</p>  
       <p>来店日時{{$Comedate}}：{{$ComeTime}}</p>
+      <p>店舗ID:{{$restaurant_id}}</p>
     </div>
     <div class="order-amount">
       <p>合計金額:¥ {{$totalprice}}</p>
@@ -31,6 +32,7 @@
       <input type="hidden" name="Comedate" value="{{$Comedate}}">
       <input type="hidden" name="ComeTime" value="{{$ComeTime}}">
       <input type="hidden" name="totalprice" value="{{$totalprice}}">
+      <input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
       <input type="submit" value="注文確定し、決済に進む" class="order-btn">
     </div>
 </form>
