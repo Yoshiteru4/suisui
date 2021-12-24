@@ -11,7 +11,7 @@
  <div class="edit">
     <div class="edit-btn">
        <form action="/restaurant/{{ $restaurants->id }}/edit" method="get">
-          <input type="submit" value="編集" class="btn">
+          <input type="submit" value="編集" class="edit-btn2">
        </form>
     </div>
  </div>
@@ -26,7 +26,7 @@
         <p class="aiueo">{{$menu->food}}</p>
         <img src="{{ $menu->image_path }}" alt="画像">
         <p>¥{{$menu->price}}</p>
-        <input type="submit" value="削除する">
+        <input type="submit" value="削除する" class="delete-btn">
         {{-- <input type="submit" value="編集する"> --}}
         </div>
         @endforeach
