@@ -21,7 +21,7 @@
     <div class="restaurant">
         @foreach ($restaurants->menus as $menu)
         @csrf
-        {{-- @method('DELETE') --}}
+        @method('DELETE')
         <div class="restaurantbox">
         <p class="aiueo">{{$menu->food}}</p>
         <img src="{{ $menu->image_path }}" alt="画像">
