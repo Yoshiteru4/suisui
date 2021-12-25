@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('SuiSui Crew はこちらからログイン') }}</div>
+                <h1 class="card-header">{{ __('SuiSui Restaurant はこちらからログイン') }}</h1>
 
                 <div class="card-body">
                     <form method="POST" action="/restaurant/login">
@@ -15,7 +15,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="example.gmail.com" size="35">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="パスワードを入力してください" size="35">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -53,16 +53,17 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <input type="submit" value="ログイン" class="btn btn-primary">
-                                {{-- <button type="submit" class="btn btn-primary">
+                                {{-- <input type="submit" value="ログイン" class="btn btn-primary"> --}}
+                                <button type="submit" class="btn1 btn-primary">
                                     {{ __('ログイン') }}
-                                </button> --}}
-
+                                </button>
+                                <div class="password-forget">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('パスワードをお忘れですか？') }}
                                     </a>
                                 @endif
+                                </div>
                             </div>
                         </div>
                     </form>
