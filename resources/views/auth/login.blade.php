@@ -67,7 +67,7 @@
                         </div>
                     </form>
                     <div class="restaurant-btn">
-                    <a href="restaurant/login " class="restaurant-btn">お店の方はこちら</a>
+                    <a href="restaurant/login " class="restaurant-btn shop-btn">お店の方はこちら</a>
                     </div>
                 </div>
             </div>
