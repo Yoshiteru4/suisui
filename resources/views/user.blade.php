@@ -28,7 +28,7 @@
                <div class="edit">
                   <div class="edit-btn">
                      <form action="/user/{{ $user->id }}/edit" method="get">
-                        <input type="submit" value="編集" class="btn">
+                        <input type="submit" value="編集" class="edit-btn2">
                      </form>
                   </div>
                </div>

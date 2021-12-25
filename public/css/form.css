@@ -7,7 +7,7 @@
    padding-top: 40px;
 }
 input{
-   height: 25px;
+   height: 40px;
 }
 .form-group{
    padding-top: 20px;
@@ -109,7 +109,7 @@ header{
 .btn1{
    display       : inline-block;
    border-radius : 5%;          /* 角丸       */
-   font-size     : 10pt;        /* 文字サイズ */
+   font-size     : 15pt;        /* 文字サイズ */
    text-align    : center;      /* 文字位置   */
    cursor        : pointer;     /* カーソル   */
    padding       : 12px 12px;   /* 余白       */
@@ -119,4 +119,7 @@ header{
    transition    : .3s;         /* なめらか変化 */
    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
    border        : 2px solid #FD9940;    /* 枠の指定 */
+}
+body{
+   height: 1000px;
 }

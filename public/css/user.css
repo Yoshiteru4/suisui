@@ -36,19 +36,19 @@ h2{
 .edit-btn{
    padding-top: 30px;
 }
-.btn{
+.edit-btn2{
       display       : inline-block;
-      border-radius : 5%;          /* 角丸       */
-      font-size     : 18pt;        /* 文字サイズ */
-      text-align    : center;      /* 文字位置   */
-      cursor        : pointer;     /* カーソル   */
-      padding       : 12px 12px;   /* 余白       */
-      background    : #FD9940;     /* 背景色     */
-      color         : #ffffff;     /* 文字色     */
-      line-height   : 1em;         /* 1行の高さ  */
-      transition    : .3s;         /* なめらか変化 */
-      box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-      border        : 2px solid #FD9940;    /* 枠の指定 */
+      border-radius : 5%;         
+      font-size     : 18px;       
+      text-align    : center;     
+      cursor        : pointer;     
+      padding       : 12px 12px;   
+      background    : #FD9940;     
+      color         : #ffffff;    
+      line-height   : 1em;        
+      transition    : .3s;         
+      box-shadow    : 6px 6px 3px #666666; 
+      border        : 2px solid #FD9940;   
       }
 .button:hover {
    box-shadow    : none;        
@@ -84,4 +84,5 @@ p{
 }
 body{
    background-color: #f0f0f0	;
+   height: 1000px;
 }
