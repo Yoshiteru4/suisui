@@ -1,4 +1,7 @@
 @extends('layouts.restaurant')
+
+@section('title', 'アカウント情報')
+
 <link rel="stylesheet" href="{{ asset('css/restaurant.css') }}">
 @section('content')
     <main>

@@ -26,7 +26,7 @@ class RestaurantController extends Controller
         $restaurants = Auth::user();
         $today = Carbon::today();
         $today_orders = Order::whereDate('updated_at',$today)->get();
-        return view('restaurant.restaurant_account',['restaurants'=>$restaurants],['today_orders'=>$today_orders],);
+        return view('restaurant.restaurant_account',['restaurants'=>$restaurants],['today_orders'=> $today_orders]);
     }
 
     public function RestaurantEdit()
@@ -38,9 +38,10 @@ class RestaurantController extends Controller
 
     public function index()
     {
-        $R_orderhistories = Order::latest()->get();
-        // dd($R_orderhistories);
-        return view('restaurant.restaurant_orderhistory',['R_orderhistories'=>$R_orderhistories]);
+        $restaurants = Auth::user();
+        $orders = Order::latest()->get();
+        // dd($orders);
+        return view('restaurant.restaurant_orderhistory',['orders'=>$orders],['restaurants'=>$restaurants]);
     }
 
     public function __construct()

@@ -1,5 +1,7 @@
 @extends('layouts.restaurant')
 
+@section('title', '注文履歴')
+
 <link rel="stylesheet" href="{{ asset('css/restaurant.css') }}">
 @section('content')
     <main>
@@ -7,14 +9,16 @@
             <h2>＜注文履歴＞</h2>
 
 
-                @foreach ($R_orderhistories as $R_orderhistory)
-                    <P>{{ $R_orderhistory->updated_at}}</P>
-                    {{-- <P>料理名：{{ $R_orderhistory->menu->food}}：{{ $R_orderhistory->menu_amount}}</P> --}}
-                    <P>注文者名：{{ $R_orderhistory->user->name}}</P>
-                    <P>合計金額：¥{{ $R_orderhistory->totalprice}}</P>
-
-                    <hr>
-                @endforeach
+            @foreach ($restaurants->orders as $order)
+            <p>注文者名：{{$order->user->name}}</p>
+            <p>注文時間：{{$order->updated_at}}</p>
+            {{-- <p>店舗名：{{$order->restaurants->name}}</p> --}}
+            {{-- <p>料理名：{{$order->menus->food}}</p> --}}
+            <p>個数：{{$order->menu_amount}}</p>
+            <p>注文金額：¥{{$order->totalprice}}</p>
+            <p>来店時間：{{$order->come_date}} ：{{$order->come_time}}</p>
+            <hr>
+            @endforeach
 
                 
         </div>
