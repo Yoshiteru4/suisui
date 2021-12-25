@@ -1,6 +1,5 @@
 @extends('layouts.app')
-
-
+<link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

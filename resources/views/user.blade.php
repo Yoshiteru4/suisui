@@ -1,6 +1,6 @@
    @extends('layouts.app')
 
-   @section('title', '')
+   @section('title', 'アカウント情報')
 
    @section('top','Suisui')
 
