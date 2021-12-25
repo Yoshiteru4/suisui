@@ -12,10 +12,10 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
 
-    // public function orders()
-    // {
-    //     return $this->hasMany('App\Order');
-    // }
+    public function restaurant()
+    {
+        return $this->belongsTo('App\Restaurant');
+    }
 
     public function menu()
     {
