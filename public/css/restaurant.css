@@ -60,6 +60,7 @@ img{
 }
 main{
    height: 1000px;
+   /* text-align: center; */
 }
 .edit-btn{
    text-align: center;
@@ -112,4 +113,25 @@ main{
    transition    : .3s;         /* なめらか変化 */
    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
    border        : 2px solid #FD9940;    /* 枠の指定 */
+}
+.order-table{
+   text-align: center;
+   padding-bottom: 100px;
+   padding-top: 20px;
+}
+table th{
+   color: #FF9800;
+   background: #fff5e5;
+   padding: 10px;
+}
+table{
+   border-collapse: collapse;
+   border: solid 2px orange;
+   width:100%;
+}
+table th, table td{
+   border: dashed 1px orange;
+}
+table td {
+   padding: 3px 10px;
 }

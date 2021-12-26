@@ -16,28 +16,32 @@
 <div class="order-detail">
     <div class="image"><img src="{{$menuimage}}" alt=""></div>
 <div class="order-menu">
-<h4>選んだメニューの店舗名:{{$restaurantname}}</h4><br>
-<h4>選んだメニュー: {{$menufood}}</h4><br>
-<span>選んだメニューの金額: ¥{{$menuprice}}</span><span><br>
+  <div class="order-table">
+    <table border="1" align="center">
+       <tr><th>選んだ料理名</th><td>{{$menufood}}</td></tr>
+       <tr><th>選んだ店舗名</th><td>{{$restaurantname}}</td></tr>
+       <tr><th>選んだメニューの金額</th><td>¥{{$menuprice}}</td></tr>
+       <tr><th>個数（必須）</th><td><select class="form" name="menuQuantity">
+        <option value="1">1</option>
+        @for ($i = 2; $i <= 10; $i++)
+            <option value="{{ $i }}">{{ $i }}</option>
+        @endfor
+    </select>個</td></tr>
+       <tr><th>来店人数（必須）</th><td><select class="form-control" name="personQuantity">
+        <option value="1">1</option>
+        @for ($i = 2; $i <= 10; $i++)
+            <option value="{{ $i }}">{{ $i }}</option>
+        @endfor
+      </select>人</td></tr>
+       <tr><th>来店日時（必須）</th><td><input type="date" id="today" name="Comedate"><input type="time" name="ComeTime" min="08:00" max="22:00" value="08:00"></td></tr>     
+     </table>
+    </div>
 <input type="hidden" name="menuid" value="{{$menuid}}">
 <input type="hidden" name="restaurantname" value="{{$restaurantname}}">
 <input type="hidden" name="menufood" value="{{$menufood}}">
 <input type="hidden" name="menuprice" value="{{$menuprice}}">
 <input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
 
-  <p>メニューの個数：<select class="form" name="menuQuantity">
-    <option value="1">1</option>
-    @for ($i = 2; $i <= 10; $i++)
-        <option value="{{ $i }}">{{ $i }}</option>
-    @endfor
-</select>個</p>
-<p>来店人数：<select class="form-control" name="personQuantity">
-  <option value="1">1</option>
-  @for ($i = 2; $i <= 10; $i++)
-      <option value="{{ $i }}">{{ $i }}</option>
-  @endfor
-</select>人</p>
-<p>来店日時:<input type="date" id="today" name="Comedate"><input type="time" name="ComeTime" min="08:00" max="22:00" value="08:00"></p>
 </div>
 
 </div>

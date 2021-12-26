@@ -75,3 +75,28 @@
     text-align: center;
     padding-top: 40px;
 }
+.order-table{
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 465px;
+ }
+ table{
+    width: 50%;
+    border-collapse: collapse;
+    border: solid 2px orange;
+ }
+ table th{
+    color: #FF9800;
+    background: #fff5e5;
+    padding: 10px;
+ }
+ 
+ table th, table td{
+    border: dashed 1px orange;
+ }
+ table td {
+    padding: 3px 10px;
+ }
+ .order-btn1{
+     padding-top: 20px;
+ }

@@ -69,10 +69,16 @@
     @foreach($menus as $menu)
       <div class="menu">
           <img src="{{ $menu->image_path }}" alt="画像">
-          <h4>料理名：{{$menu->food}}</h4>
-          <h4>値段：¥{{$menu->price}}</h4>
-          <h4>店舗名：{{ $menu->restaurant->name }}</h4>
-
+          <div class="order-table">
+            <table border="1" align="center">
+               <tr><th>料理名</th><td>{{ $menu->food }}</td></tr>
+               <tr><th>店舗名</th><td>{{ $menu->restaurant->name }}</td></tr>
+               <tr><th>店舗ID</th><td>{{ $menu->restaurant->id }}</td></tr>
+               <tr><th>住所</th><td>{{ $menu->restaurant->address }}</td></tr>
+               <tr><th>ランチタイム</th><td>{{ $menu->restaurant->lunchhour}}</td></tr>
+               <tr><th>金額</th><td>¥{{ $menu->price }}</td></tr>     
+             </table>
+            </div>
       <form action="/detail"  method="post">
         @csrf
 
@@ -81,7 +87,10 @@
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">
+         <input type="hidden" name="restaurant_id" value="{{$menu->restaurant->id}}">
+         <div class="order-btn1">
           <input type="submit" value="注文する" class="order-btn">
+        </div>
       </form>
       </div>
     @endforeach

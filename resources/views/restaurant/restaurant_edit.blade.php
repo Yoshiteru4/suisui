@@ -29,7 +29,7 @@
             <img src="{{ $menu->image_path }}" alt="画像">
             <p>¥{{$menu->price}}</p>
             <input type="hidden" name="id" value="{{ $menu->id }}">  
-            <input type="submit" value="削除する">
+            <input type="submit" value="削除する" class="delete-btn">
         </div>
         @endforeach
     </form>
