@@ -51,6 +51,7 @@ table{
    width: 350px;
    border-collapse: collapse;
    border: solid 2px orange;
+   text-align: center;
 }
 table th{
    color: #FF9800;
