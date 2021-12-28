@@ -14,7 +14,6 @@
         <table border="1" align="center">
            <tr><th>選んだ料理名</th><td>{{$menufood}}</td></tr>
            <tr><th>選んだ店舗名</th><td>{{$restaurantname}}</td></tr>
-           <tr><th>店舗ID</th><td>{{$restaurant_id}}</td></tr>
            <tr><th>個数</th><td>{{$menuQuantity}}個</td></tr>
            <tr><th>人数</th><td>{{$personQuantity}}人</td></tr>
            <tr><th>来店日時</th><td> {{$Comedate}}：{{$ComeTime}}</td></tr>
@@ -35,7 +34,6 @@
       <input type="hidden" name="Comedate" value="{{$Comedate}}">
       <input type="hidden" name="ComeTime" value="{{$ComeTime}}">
       <input type="hidden" name="totalprice" value="{{$totalprice}}">
-      <input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
       <div class="order-btn1">
         <input type="submit" value="注文確定し、決済に進む" class="order-btn">
       </div>

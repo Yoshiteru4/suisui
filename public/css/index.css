@@ -138,6 +138,9 @@ img{
 main{
    height: 2500px;
 }
+body{
+   background-color: #f0f0f0;
+}
 .form{
    height:23px;
 }

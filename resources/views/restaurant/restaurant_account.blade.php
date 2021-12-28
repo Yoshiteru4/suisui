@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <td>{{$order->user->name}}</td>
-                <td></td>
+                <td>{{$order->menu->food}}</td>
                 <td>{{$order->menu_amount}}</td>
                 <td>{{$order->totalprice}}</td>
                 <td>{{$order->come_date}} {{$order->come_time}}</td>

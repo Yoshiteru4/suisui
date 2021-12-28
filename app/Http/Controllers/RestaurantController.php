@@ -38,7 +38,7 @@ class RestaurantController extends Controller
 
     public function index()
     {
-        $restaurants = Auth::user();
+        $restaurants = Auth::user()->id;
         $orders = Order::latest()->get();
         // dd($orders);
         return view('restaurant.restaurant_orderhistory',['orders'=>$orders],['restaurants'=>$restaurants]);

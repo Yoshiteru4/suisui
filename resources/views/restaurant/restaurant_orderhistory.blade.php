@@ -28,6 +28,18 @@
             </tr>
             </table>
             </div>
+            <div class="menu">
+            <img src="{{ $menu->image_path }}" alt="画像">
+            <div class="order-table">
+            <table border="1" align="center">
+               <tr><th>料理名</th><td>{{ $menu->food }}</td></tr>
+               <tr><th>店舗名</th><td>{{ $menu->restaurant->name }}</td></tr>
+               <tr><th>店舗ID</th><td>{{ $menu->restaurant->id }}</td></tr>
+               <tr><th>住所</th><td>{{ $menu->restaurant->address }}</td></tr>
+               <tr><th>ランチタイム</th><td>11:00~13:00</td></tr>
+               <tr><th>金額</th><td>¥{{ $menu->price }}</td></tr>     
+             </table>
+            </div>
         </div>
             @endforeach
     </main>
