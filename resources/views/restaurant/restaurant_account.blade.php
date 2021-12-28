@@ -19,12 +19,12 @@
                 <th>注文時間</th>
             </tr>
             <tr>
+                <td>{{$order->user->name}}</td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$order->menu_amount}}</td>
+                <td>{{$order->totalprice}}</td>
+                <td>{{$order->come_date}} {{$order->come_time}}</td>
+                <td>{{$order->updated_at}}</td>
             </tr>
             </table>
             </div>

@@ -75,7 +75,7 @@
                <tr><th>店舗名</th><td>{{ $menu->restaurant->name }}</td></tr>
                <tr><th>店舗ID</th><td>{{ $menu->restaurant->id }}</td></tr>
                <tr><th>住所</th><td>{{ $menu->restaurant->address }}</td></tr>
-               <tr><th>ランチタイム</th><td>{{ $menu->restaurant->lunchhour}}</td></tr>
+               <tr><th>ランチタイム</th><td>11:00~13:00</td></tr>
                <tr><th>金額</th><td>¥{{ $menu->price }}</td></tr>     
              </table>
             </div>
