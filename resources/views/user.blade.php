@@ -32,13 +32,19 @@
                      </form>
                   </div>
                </div>
-            </div>
+      </div>
+
             <div class="favoritebox">
                <i class="fas fa-heart fa-2x hurt"></i>
                <h2><a href="/favorite" class="favorite">お気に入り一覧</a></h2>
-               
             </div>
-            <div class="cardbox">
+            
+            <div class="orderbox">
+               <i class="fas fa-book-open size"></i>
+               <h2><a href="/user_orderhistory">注文履歴を見る</a></h2>
+            </div>
+               
+            {{-- <div class="cardbox">
                <i class="fas fa-credit-card fa-2x card"></i>
                <h2>決済方法</h2>
             </div>
@@ -51,7 +57,7 @@
                data-text="カード情報を入力"
                data-submit-text="カードを登録する">
             </script>
-         </form>
+         </form> --}}
       </div>
    </body>
    </html>

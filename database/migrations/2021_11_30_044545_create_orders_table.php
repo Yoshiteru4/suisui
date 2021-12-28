@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('menu_id');
             $table->integer('user_id');
-            $table->integer('restaurant_id');
+            // $table->integer('restaurant_id');
             $table->integer('totalprice');
             $table->integer('menu_amount');
             $table->integer('person_amount');

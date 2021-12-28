@@ -33,14 +33,13 @@
             <option value="{{ $i }}">{{ $i }}</option>
         @endfor
       </select>人</td></tr>
-       <tr><th>来店日時（必須）</th><td><input type="date" id="today" name="Comedate"><input type="time" name="ComeTime" min="08:00" max="22:00" value="08:00"></td></tr>     
+       <tr><th>来店日時（必須）</th><td><input type="date" id="today" name="Comedate"><input type="time" name="ComeTime" min="11:00" max="13:00" value="11:00"></td></tr>     
      </table>
     </div>
 <input type="hidden" name="menuid" value="{{$menuid}}">
 <input type="hidden" name="restaurantname" value="{{$restaurantname}}">
 <input type="hidden" name="menufood" value="{{$menufood}}">
 <input type="hidden" name="menuprice" value="{{$menuprice}}">
-<input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
 
 </div>
 

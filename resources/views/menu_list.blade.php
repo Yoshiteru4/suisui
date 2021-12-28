@@ -8,7 +8,7 @@
 
 @section('content')
 
-<h1 class="index">メニュー一覧</h1>
+<h1 class="index">Menu</h1>
 
 <div class="menubox">
    @foreach($menus as $menu)
@@ -32,7 +32,7 @@
          <input type="hidden" name="menuprice" value="{{$menu->price}}">
          <input type="hidden" name="menuimage" value="{{$menu->image_path}}">         
          <input type="hidden" name="restaurantname" value="{{$menu->restaurant->name}}">         
-         <input type="hidden" name="restaurant_id" value="{{$menu->restaurant->id}}">       
+         {{-- <input type="hidden" name="restaurant_id" value="{{$menu->restaurant->id}}">        --}}
 
          <div class="order-btn1">
              <input type="submit"  class="order-btn" value="注文する">

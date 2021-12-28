@@ -5,6 +5,11 @@
 ul{
    list-style: none;
 }
+.size{
+   font-size:1.5em;
+   padding-top: 5px;
+   padding-right: 10px;
+}
 a{
    text-decoration: none;
 }
@@ -77,6 +82,9 @@ p{
    display: flex;
    flex-direction: row;
    justify-content: center;
+}
+.orderbox{
+   display: flex;
 }
 .card{
    color: #FD9940;
