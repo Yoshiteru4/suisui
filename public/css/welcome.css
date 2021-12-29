@@ -186,7 +186,6 @@ body{
 body{
    background: url(../images/pexels-ella-olsson-1640774.jpg) no-repeat center;
    background-size: cover;
-   position: relative;
    z-index: 0;
    overflow: hidden;
 }
