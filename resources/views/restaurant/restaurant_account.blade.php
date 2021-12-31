@@ -1,15 +1,14 @@
 @extends('layouts.restaurant')
-
 @section('title', '今日の注文履歴')
 
 <link rel="stylesheet" href="{{ asset('css/restaurant.css') }}">
 @section('content')
     <main>
-        <div class="restaurant_account">
-            <h2>＜今日の注文状況一覧＞</h2>
-            @foreach ($today_orders as $order)
+        <div class="restaurant_orderhistory">
+            <h2>＜今日の注文履歴＞</h2>
             <div class="order-table">
-            <table border="1" align="center">
+        @foreach ($today_orders as $today_order) 
+        <table border="1" align="center">
             <tr>
                 <th>注文者名</th>
                 <th>料理名</th>
@@ -19,17 +18,14 @@
                 <th>注文時間</th>
             </tr>
             <tr>
-                <td>{{$order->user->name}}</td>
-                <td>{{$order->menu->food}}</td>
-                <td>{{$order->menu_amount}}</td>
-                <td>{{$order->totalprice}}</td>
-                <td>{{$order->come_date}} {{$order->come_time}}</td>
-                <td>{{$order->updated_at}}</td>
+                <td> {{ $today_order->user->name }}</td>
+                <td>{{$today_order->menu->food}}</td>
+                <td>{{ $today_order->menu_amount }}個</td>
+                <td>¥{{ $today_order->totalprice }}</td>
+                <td>{{ $today_order->come_date }} {{$today_order->come_time }}</td>
+                <td>{{ $today_order->updated_at }}</td>
             </tr>
-            </table>
-            </div>
-        </div>
-            @endforeach
-        </div>
+        </table>
+        @endforeach
     </main>
 @endsection

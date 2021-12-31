@@ -6,6 +6,7 @@
 
 <main>
     <div class="restaurant_edit">
+        <i class="fas fa-store-alt size"></i>
         <h2>＜お店の登録情報＞</h2>
  <p>お店の名前：{{$restaurants->name}}</p>
  <p>E-mail：{{$restaurants->email}}</p>
@@ -25,11 +26,13 @@
         @foreach ($restaurants->menus as $menu)
         @csrf
             <div class="restaurantbox">
-            <p class="aiueo">{{$menu->food}}</p>
-            <img src="{{ $menu->image_path }}" alt="画像">
-            <p>¥{{$menu->price}}</p>
-            <input type="hidden" name="id" value="{{ $menu->id }}">  
-            <input type="submit" value="削除する" class="delete-btn">
+                <p class="aiueo">{{$menu->food}}</p>
+                <img src="{{ $menu->image_path }}" alt="画像">
+                <p>¥{{$menu->price}}</p>
+                <input type="hidden" name="id" value="{{ $menu->id }}">
+            <div class="d-btn">
+                <input type="submit" value="削除する" class="delete-btn">
+            </div> 
         </div>
         @endforeach
     </form>

@@ -21,9 +21,9 @@
             <div class="restaurant">
                 @foreach($Restaurant->menus as $menu)
                 <div class="restaurantbox">
-                    <p class="aiueo">{{ $menu->food }}</p>
                     <img src="{{ $menu->image_path }}" alt="画像">
-                    <p>¥{{$menu->price}}</p>
+                    <p class="aiueo">料理名：{{ $menu->food }}</p>
+                    <p>金額：¥{{$menu->price}}</p>
                 </div>
                 @endforeach
             </div>
