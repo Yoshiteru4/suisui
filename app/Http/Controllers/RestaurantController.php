@@ -23,10 +23,17 @@ class RestaurantController extends Controller
 
     public function RestaurantAccount()
     {
-        $restaurants = Auth::user();
-        $today = Carbon::today();
-        $today_orders = Order::whereDate('updated_at',$today)->get();
-        return view('restaurant.restaurant_account',['restaurants'=>$restaurants],['today_orders'=> $today_orders]);
+        $restaurantId = Auth::user()->id;
+
+        // クエリ（SQL）を変数へ一旦入れておくとコードがスッキリする。
+        $query = Restaurant::find($restaurantId)->orders();
+        // ログインしているレストランに紐づく注文を全件取得
+        $orders = $query->get();
+        // dd($orders);
+        // レストランに紐づく注文のうち、今日の注文のみ取得
+        $today_orders = $query->whereDate('created_at', Carbon::today())->get();
+        // dd($today_orders);
+        return view('restaurant.restaurant_account', ['orders' => $orders, 'today_orders' => $today_orders]);
     }
 
     public function RestaurantEdit()
@@ -38,10 +45,11 @@ class RestaurantController extends Controller
 
     public function index()
     {
-        $restaurants = Auth::user()->id;
-        $orders = Order::latest()->get();
+        $restaurantId = Auth::id();
+        $orders = Restaurant::find($restaurantId)->orders()->get();
+        // $menus = Restaurant::find($restaurantId)->menus();
         // dd($orders);
-        return view('restaurant.restaurant_orderhistory',['orders'=>$orders],['restaurants'=>$restaurants]);
+        return view('restaurant.restaurant_orderhistory',['orders'=>$orders],['restaurantId'=>$restaurantId]);
     }
 
     public function __construct()

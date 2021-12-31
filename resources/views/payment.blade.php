@@ -34,6 +34,7 @@
       <input type="hidden" name="Comedate" value="{{$Comedate}}">
       <input type="hidden" name="ComeTime" value="{{$ComeTime}}">
       <input type="hidden" name="totalprice" value="{{$totalprice}}">
+      <input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
       <div class="order-btn1">
         <input type="submit" value="注文確定し、決済に進む" class="order-btn">
       </div>

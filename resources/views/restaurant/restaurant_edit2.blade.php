@@ -9,7 +9,7 @@
     @csrf
     {{-- @method('PATCH') --}}
     <div class="input">
-       <i class="fas fa-user-circle fa-5x human"></i>
+      <i class="fas fa-store-alt size"></i>
        <input type="hidden" name="id" value="{{ $restaurants->id }}">
        <h3>名前</h3>
        <input type="text" name="name" value="{{ $restaurants->name }}">

@@ -26,7 +26,8 @@ class OrderController extends Controller
         $menuprice = $request->input('menuprice');
         $menuimage = $request->input('menuimage');
         $restaurantname = $request->input('restaurantname');
-        return view('detail',compact('menuid','menufood','menuprice','menuimage','restaurantname','users'));
+        $restaurant_id = $request->input('restaurant_id');
+        return view('detail',compact('menuid','menufood','menuprice','menuimage','restaurantname','users','restaurant_id'));
     }
 
     public function ordershow(Request $request)
@@ -35,14 +36,14 @@ class OrderController extends Controller
       $menuid = $request->input('menuid');
       $menufood = $request->input('menufood');
       $restaurantname = $request->input('restaurantname');
-      // $restaurant_id = $request->input('restaurant_id');
+      $restaurant_id = $request->input('restaurant_id');
       $menuprice = $request->input('menuprice');
       $menuQuantity = $request->input('menuQuantity');
       $personQuantity = $request->input('personQuantity');
       $Comedate = $request->input('Comedate');
       $ComeTime = $request->input('ComeTime');
       $totalprice = $menuprice * $menuQuantity;
-      return view('payment',compact('menuid','menufood','restaurantname','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice'));
+      return view('payment',compact('menuid','menufood','restaurantname','menuprice','menuQuantity','personQuantity','Comedate','ComeTime','totalprice','restaurant_id'));
     }
     public function order_finish(Request $request)
   {
@@ -55,12 +56,12 @@ class OrderController extends Controller
       $orders->person_amount = $request->personQuantity;
       $orders->come_date = $request->Comedate;
       $orders->come_time = $request->ComeTime;
-      // $orders->restaurant_id = $request->restaurant_id;
+      $orders->restaurant_id = $request->restaurant_id;
       // dd($orders);
       $orders->save();
       $users = Auth::user()->name;
       $totalprice = $request->totalprice;
-      return view('paymentcheck',compact('users','totalprice'));
+      return view('paymentcheck',compact('users','totalprice',));
   }
   public function orderhistory()
   {

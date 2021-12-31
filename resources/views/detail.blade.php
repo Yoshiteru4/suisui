@@ -40,6 +40,7 @@
 <input type="hidden" name="restaurantname" value="{{$restaurantname}}">
 <input type="hidden" name="menufood" value="{{$menufood}}">
 <input type="hidden" name="menuprice" value="{{$menuprice}}">
+<input type="hidden" name="restaurant_id" value="{{$restaurant_id}}">
 
 </div>
 
