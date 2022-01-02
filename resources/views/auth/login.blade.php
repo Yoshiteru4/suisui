@@ -1,6 +1,7 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 @section('content')
+<main>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -42,11 +43,11 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    {{-- <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> --}}
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('自分にメールを送る') }}
-                                    </label>
+                                    {{-- <label class="form-check-label" for="remember"> --}}
+                                        {{-- {{ __('自分にメールを送る') }} --}}
+                                    {{-- </label> --}}
                                 </div>
                             </div>
                         </div>
@@ -74,5 +75,6 @@
         </div>
     </div>
 </div><br>
+</main>
 @endsection
 
