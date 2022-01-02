@@ -100,3 +100,35 @@
  .order-btn1{
      padding-top: 20px;
  }
+ @media screen and (max-width: 375px) {
+    h1{
+       font-size: 20px;
+       padding-top: 30px;
+    }
+    img{
+       width: 300px;
+       height: 250px;
+    }
+    .order-table{
+       padding-top: 20px;
+       text-align: center;
+       padding-left: 20px;
+       padding-right: 20px;
+    }
+    table{
+       width: 100%;
+       text-align: center;
+       padding-right: 10px;
+    }
+    h2{
+        font-size: 20px;
+        padding-top: 30px;
+    }
+    h3{
+        font-size: 20px;
+        padding-top: 20px;
+    }
+    .test-code{
+        font-size: 20px;
+    }
+    }

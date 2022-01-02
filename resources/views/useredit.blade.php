@@ -22,12 +22,16 @@
          @csrf
          @method('put')
          <div class="input">
-            <i class="fas fa-user-circle fa-5x human"></i>
-            <input type="hidden" name="id" value="{{ $user->id }}">
-            <h3>名前</h3>
-            <input type="text" name="name" value="{{ $user->name }}">
-            <h3>メールアドレス</h3>
-            <input type="email" name="email" value="{{ $user->email }}">
+            <i class="fas fa-user-circle fa-5x human"></i>      
+               <input type="hidden" name="id" value="{{ $user->id }}">
+            <h3>名前を変更する</h3>
+            <div class="change-form">
+               <input type="text" name="name" value="{{ $user->name }}">
+            </div>
+            <h3>メールアドレスを変更する</h3>
+            <div class="change-form">
+               <input type="email" name="email" value="{{ $user->email }}">
+            </div>
             <input type="submit" value="完了" class="btn">
          </div>
       </form>
