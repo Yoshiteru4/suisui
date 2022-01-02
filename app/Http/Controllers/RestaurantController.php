@@ -32,7 +32,7 @@ class RestaurantController extends Controller
         // dd($orders);
         // レストランに紐づく注文のうち、今日の注文のみ取得
         $today_orders = $query->whereDate('created_at', Carbon::today())->get();
-        // dd($today_orders);
+        dd($today_orders);
         return view('restaurant.restaurant_account', ['orders' => $orders, 'today_orders' => $today_orders]);
     }
 

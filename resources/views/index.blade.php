@@ -35,7 +35,7 @@
     <a class="reset-btn" href="{{ url('/index')}}">検索をリセット</a>
   </div>
   <div class="search-condition">
-    <h1><i class="fas fa-search"> 検索条件を入力してください</i></h1>
+    <h1 class="search-input"><i class="fas fa-search"> 検索条件を入力してください</i></h1>
     <form action="{{ url('/search')}}" method="post">
       {{ csrf_field()}}
       {{method_field('get')}}
