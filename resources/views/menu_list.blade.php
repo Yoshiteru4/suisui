@@ -18,11 +18,11 @@
             <table border="1" align="center">
                <tr><th>料理名</th><td>{{ $menu->food }}</td></tr>
                <tr><th>店舗名</th><td>{{ $menu->restaurant->name }}</td></tr>
-               <tr><th>店舗ID</th><td>{{ $menu->restaurant->id }}</td></tr>
+               {{-- <tr><th>店舗ID</th><td>{{ $menu->restaurant->id }}</td></tr> --}}
                <tr><th>住所</th><td>{{ $menu->restaurant->address }}</td></tr>
                <tr><th>ランチタイム</th><td>11:00~13:00</td></tr>
                <tr><th>金額</th><td>¥{{ $menu->price }}</td></tr>     
-             </table>
+            </table>
             </div>
       <form action="/detail"  method="post">
          @csrf
@@ -35,7 +35,7 @@
          <input type="hidden" name="restaurant_id" value="{{$menu->restaurant->id}}">       
 
          <div class="order-btn1">
-             <input type="submit"  class="order-btn" value="注文する">
+            <input type="submit"  class="order-btn" value="注文する">
          </div>
       </form>
             
@@ -46,7 +46,7 @@
                <a href="/menus/{{ $menu->id}}/favorites"><i class="far fa-heart fa-2x hurt"></i></a>
                @endif
             </div>
-            {{-- {{ $menu->favorites->count() }} --}}
+         
 
          </div>
    @endforeach

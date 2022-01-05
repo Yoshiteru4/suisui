@@ -40,24 +40,11 @@
             </div>
             
             <div class="orderbox">
-               <i class="fas fa-book-open size"></i>
+               <i class="fas fa-book-open fa-2x book"></i>
                <h2><a href="/user_orderhistory">注文履歴を見る</a></h2>
             </div>
                
-            {{-- <div class="cardbox">
-               <i class="fas fa-credit-card fa-2x card"></i>
-               <h2>決済方法</h2>
-            </div>
-         <form action="{{ route('payment') }}" method="post" class="text-center mt-xxl">
-            @csrf
-            <script
-               src="https://checkout.pay.jp/"
-               class="payjp-button"
-               data-key="pk_test_720a7b7eeb3f7e4927d6e3be"
-               data-text="カード情報を入力"
-               data-submit-text="カードを登録する">
-            </script>
-         </form> --}}
+            
       </div>
    </body>
    </html>

@@ -37,7 +37,6 @@
             </div>
 
             <div class="kotira" >
-                {{-- <p>新規登録はこちらから</p> --}}
                 @if (Route::has('login'))
                     <div class="login">
                         @auth
