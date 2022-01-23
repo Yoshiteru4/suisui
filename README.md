@@ -1,6 +1,10 @@
 # ランチマッチングアプリ　「SuiSui」
 - 忙しいビジネスパーソンと人気飲食店のランチマッチングアプリ
 
+# URL
+- herokuを使用し、デプロイしました。機会があれば、AWSを使用し、デプロイに挑戦したいと考えています。
+http://neoneat.herokuapp.com/
+
 # SuiSuiアプリ事業計画書（以下リンクよりご覧ください。）
 https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#slide=id.g108322b7a13_0_61
 
