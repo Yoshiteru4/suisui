@@ -19,7 +19,7 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 - MailStrap ~ ユーザーが新規登録した際、「登録完了メール」が送信されるようになっています、MailtrapのAPIを用いて、実装しました。
 
 # 苦労したこと
-- サーバーサイド機能の実装
+- サーバーサイド機能の実装　〜　cloudinary（画像投稿機能）・Payjp（決済機能）といったWEBのAPIを用いた実装を初めてだったため、仕組みからコーディングの理解に時間がかかったこと。
 
 # ユーザーからのフィードバック
 - 検索機能は料理名・料金だけではなく、マップ検索も欲しい。→Google MAPのAPIを利用したい。
