@@ -36,6 +36,10 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | timestamps  |   |
 | payjp_customer_id  | string  |
 
+### Association
+has_many :orders
+has_many :favorites
+
 ## restaurantsテーブル
 
 | Column | type |
@@ -47,6 +51,9 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | password  | string  |
 | rememberToken  |   |
 | timestamps  |   |
+
+### Association
+
 
 ## favoritesテーブル
 
