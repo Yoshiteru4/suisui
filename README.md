@@ -57,6 +57,33 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | menu_id  | integer  |
 | timestamps  |   |
 
+## menusテーブル
+
+| Column | type |
+| ------------- | ------------- |
+| id  | increments  |
+| food  | string  |
+| price  | integer  |
+| restaurant_id  | integer  |
+| timestamps  |   |
+
+## ordersテーブル
+
+| Column | type |
+| ------------- | ------------- |
+| id  | increments  |
+| menu_id  | integer |
+| user_id  | integer  |
+| restaurant_id  | integer  |
+| totalprice  | integer  |
+| menu_amount  | integer  |
+| person_amount  | integer  |
+| come_date  | string  |
+| come_time  | string  |
+| timestamps  |   |
+
+## テーブル
+
 # こだわったポイント
 - 検索機能 ~ 検索したいメニューを「料理名」、「料金」で検索をかけれる機能を実装しました。工夫した点は、条件分岐を設定し、いくつかのパターンで検索結果が表示されるようにしたことです。例えば、「料理名」のみを検索すると、入力した条件と一致した「料理名」が表示されます。「料金」のみ、「料理名」&「料金」といった検索条件でも正しく検索結果が表示されるようになっています。
 
