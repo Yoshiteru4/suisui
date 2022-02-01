@@ -98,6 +98,11 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | come_time  | string  |
 | timestamps  |   |
 
+### Association
+- belongs to:user
+- belongs to:restaurant
+- belongs to:menu
+
 ## reviewsテーブル(制作中)
 | Column | type |
 | ------------- | ------------- |
