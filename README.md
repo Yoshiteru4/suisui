@@ -82,7 +82,21 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | come_time  | string  |
 | timestamps  |   |
 
-## テーブル
+## reviewsテーブル(制作中)
+| Column | type |
+| ------------- | ------------- |
+| id  | text  |
+| user_id  | integer |
+| timestamps  |   |
+
+## genresテーブル(制作中)
+
+| Column | type |
+| ------------- | ------------- |
+| id  | increments  |
+| name  | string |
+| timestamps  |   |
+
 
 # こだわったポイント
 - 検索機能 ~ 検索したいメニューを「料理名」、「料金」で検索をかけれる機能を実装しました。工夫した点は、条件分岐を設定し、いくつかのパターンで検索結果が表示されるようにしたことです。例えば、「料理名」のみを検索すると、入力した条件と一致した「料理名」が表示されます。「料金」のみ、「料理名」&「料金」といった検索条件でも正しく検索結果が表示されるようになっています。
