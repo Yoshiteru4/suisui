@@ -37,8 +37,8 @@ https://docs.google.com/presentation/d/1twJhaFJQ25KNNphMiTOtcgcWnonyPkpL/edit#sl
 | payjp_customer_id  | string  |
 
 ### Association
-has_many :orders
-has_many :favorites
+- has_many :orders
+- has_many :favorites
 
 ## restaurantsテーブル
 
@@ -53,7 +53,8 @@ has_many :favorites
 | timestamps  |   |
 
 ### Association
-
+- has_many :menus
+- has_many :orders
 
 ## favoritesテーブル
 
@@ -64,6 +65,10 @@ has_many :favorites
 | menu_id  | integer  |
 | timestamps  |   |
 
+### Association
+- has_many :menus
+- has_many :orders
+
 ## menusテーブル
 
 | Column | type |
@@ -73,6 +78,10 @@ has_many :favorites
 | price  | integer  |
 | restaurant_id  | integer  |
 | timestamps  |   |
+
+### Association
+- belongs to:restaurant
+- has_many :orders
 
 ## ordersテーブル
 
